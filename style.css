@@ -1,3 +1,8 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* ============================================
    AE AETHER EVENTS — Complete Glassmorphism System
    Shared across all 50+ pages
@@ -828,9 +833,6 @@ main { background: #F8FAFC; }
   font-size: 0.75rem; font-weight: 500; transition: all var(--transition);
 }
 .filter-pill:hover, .filter-pill.active { background: var(--secondary); color: var(--primary); border-color: var(--secondary); }
-@media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; }
-}
 
 /* ============================================
    CONTACT SECTION
@@ -947,10 +949,6 @@ main { background: #F8FAFC; }
 .btn-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
-}
-@media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-item { padding: 24px 16px; }
 }
 
 /* ============================================
@@ -1142,10 +1140,6 @@ footer {
 .back-to-top:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-}
-@media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
 }
 @media (max-width: 640px) {
   .newsletter-form { flex-direction: column; }
@@ -1790,14 +1784,6 @@ header.scrolled {
   .stats-grid { gap: 16px; }
 }
 
-@media (max-width: 768px) {
-  .hero h1 { letter-spacing: -0.01em; }
-  .section-eyebrow { letter-spacing: 4px; }
-  .section-header { margin-bottom: 40px; }
-  .cta-banner h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
-  .portfolio-overlay { opacity: 1; padding: 20px 16px; }
-}
-
 @media (max-width: 640px) {
   .portfolio-grid { gap: 1rem; }
   .stats-grid { gap: 12px; }
@@ -1825,4 +1811,104 @@ header.scrolled {
 .logo .gold,
 .text-gold {
   background-size: 200% auto;
+}
+
+/* ============================================
+   RESPONSIVE: max-width 768px (Mobile & Tablet)
+   ============================================ */
+@media (max-width: 768px) {
+  /* --- Hamburger Menu --- */
+  nav {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  body.mobile-menu-open nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+  }
+  body.mobile-menu-open nav a {
+    font-size: 1.05rem;
+    color: var(--neutral);
+  }
+  body.mobile-menu-open nav .cta-nav {
+    margin-top: 8px;
+  }
+  body.mobile-menu-open .mobile-toggle {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 1001;
+  }
+  body.mobile-menu-open .mobile-toggle span {
+    background: var(--secondary);
+  }
+
+  /* --- Card Optimization --- */
+  .service-card,
+  .portfolio-item,
+  .pricing-card {
+    width: 100% !important;
+    margin: 10px 0;
+    min-width: 0;
+    padding: 24px 18px;
+  }
+
+  /* --- Compact Footer --- */
+  footer {
+    height: auto;
+  }
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 0;
+  }
+  .footer-col {
+    padding: 10px 0;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  /* --- Contact --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-item {
+    padding: 24px 16px;
+  }
+
+  /* --- Hero --- */
+  .hero h1 {
+    letter-spacing: -0.01em;
+  }
+  .section-eyebrow {
+    letter-spacing: 4px;
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+  .cta-banner h2 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+  .portfolio-overlay {
+    opacity: 1;
+    padding: 20px 16px;
+  }
 }
