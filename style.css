@@ -37,7 +37,7 @@ html, body {
   --radius-sm: 10px;
   --radius-pill: 999px;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --section-spacing: 120px;
+  --section-spacing: 80px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -334,7 +334,11 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
 /* ============================================
    SECTION HEADINGS
    ============================================ */
-.section { padding: var(--section-spacing) 0; }
+.section { padding: var(--section-spacing) 0; background: #FFFDF8; }
+/* Subtle section alternation for visual rhythm */
+main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
+  background: #F8F9FA;
+}
 .section-header { text-align: center; margin-bottom: 56px; }
 .section-eyebrow {
   font-family: var(--font-accent); font-size: 0.875rem;
@@ -491,6 +495,21 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   transition: all var(--transition);
 }
 .usp-card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.2); background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%); }
+.usp-icon {
+  width: 60px; height: 60px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--silver);
+}
+.usp-icon svg {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+}
 .usp-card h4 { font-family: var(--font-heading); font-size: 0.938rem; color: var(--neutral); margin-bottom: 6px; }
 .usp-card p { font-size: 0.75rem; color: rgba(255, 253, 248, 0.5); line-height: 1.6; }
 
@@ -636,61 +655,62 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   gap: 30px;
 }
 .pricing-card {
-  padding: 24px;
+  padding: 32px 28px;
   border-radius: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-  transition: all var(--transition);
+  background: #0F172A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
-  color: #0F172A;
+  color: #FFFDF8;
 }
 .pricing-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 .pricing-card.featured {
-  border: 2px solid var(--secondary);
+  border: 2px solid rgba(255,255,255,0.3);
   transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 .pricing-card.featured:hover {
-  transform: scale(1.05) translateY(-4px);
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 .pricing-badge {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  padding: 4px 16px; border-radius: var(--radius-pill);
-  background: #FFFFFF; color: var(--primary);
-  font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 5px 18px; border-radius: var(--radius-pill);
+  background: #FFFFFF; color: #0F172A;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
 }
 .pricing-card h4 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--dark-text);
-  margin-bottom: 8px;
+  font-size: 1.35rem;
+  color: #FFFDF8;
+  margin-bottom: 10px;
 }
 .pricing-price {
   font-family: var(--font-accent);
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: var(--dark-text);
-  line-height: 1;
+  color: #FFFDF8;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
+.pricing-price span[style*="color"] { color: #FFFDF8 !important; }
 .pricing-price .currency-sign {
   font-size: 1.5rem;
-  color: var(--dark-text);
+  color: #FFFDF8;
   opacity: 0.5;
   font-family: var(--font-body);
   font-weight: 400;
 }
 .pricing-price small {
   font-size: 0.75rem;
-  color: var(--dark-text);
+  color: #FFFDF8;
   opacity: 0.45;
   font-family: var(--font-body);
   font-weight: 400;
@@ -703,16 +723,18 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   flex: 1;
 }
 .pricing-feature {
-  font-size: 0.813rem;
-  color: var(--dark-text);
+  font-size: 0.85rem;
+  color: #FFFDF8;
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
   opacity: 0.8;
+  line-height: 1.6;
 }
 .pricing-feature.disabled {
   opacity: 0.35;
+  color: rgba(255, 253, 248, 0.4);
 }
 .pricing-feature .check-icon {
   width: 16px;
@@ -746,7 +768,7 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: var(--secondary);
+  color: #D4AF37;
   transition: transform var(--transition);
 }
 .faq-item.open .faq-question .faq-toggle {
@@ -1296,18 +1318,6 @@ body {
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
-/* --- Pricing Card Luxury Refinement --- */
-.pricing-card {
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.15);
-}
-.pricing-card.featured:hover {
-  transform: scale(1.05) translateY(-10px);
-}
-
 /* --- USP Card Luxury Refinement --- */
 .usp-card {
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1423,51 +1433,53 @@ body {
 }
 
 /* --- Pricing Card Luxury Refinement --- */
-.pricing-card {
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.15);
-}
-.pricing-card.featured {
-  border-color: var(--secondary);
-  background: rgba(255, 255, 255, 0.85);
-  transform: scale(1.03);
-}
-.pricing-card.featured:hover {
-  transform: scale(1.03) translateY(-10px);
-}
 
 /* --- FAQ Luxury Refinement --- */
+#faq {
+  background: #0F172A !important;
+}
+#faq .section-eyebrow,
+#faq .section-title {
+  color: #FFFDF8 !important;
+}
+#faq .faq-question {
+  color: #FFFFFF;
+}
+#faq .faq-toggle {
+  color: #D4AF37;
+}
 .faq-item {
-  border: 1px solid rgba(100, 116, 139, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
   transition: all 0.4s ease;
 }
 .faq-item:hover {
   border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.06);
 }
 .faq-item.open {
   border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
 }
 .faq-question {
   font-size: 0.9rem;
   font-weight: 500;
+  color: #FFFFFF;
   padding: 20px 24px;
   transition: color 0.3s ease;
 }
 .faq-question:hover {
-  color: var(--secondary);
+  color: #D4AF37;
+}
+.faq-toggle {
+  color: #D4AF37;
 }
 .faq-answer {
   padding: 0 24px;
   font-size: 0.85rem;
   line-height: 1.8;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.7);
 }
 .faq-item.open .faq-answer {
   padding: 0 24px 20px;
@@ -1667,6 +1679,14 @@ header.scrolled {
 .contact-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* --- About Image --- */
+.about-image-wrap img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 /* --- About Page Luxury Refinement --- */
