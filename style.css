@@ -1901,11 +1901,11 @@ header.scrolled {
 
   /* --- III. Footer & Contact (Compact Mobile) --- */
   footer {
-    padding: 12px 10px;
+    padding: 10px 14px;
     text-align: center;
   }
   .newsletter-band {
-    padding: 24px 0 16px;
+    padding: 20px 0 14px;
   }
   .newsletter-band h3 {
     font-size: 1rem;
@@ -1913,7 +1913,7 @@ header.scrolled {
   }
   .newsletter-band p {
     font-size: 0.688rem;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .newsletter-form {
     flex-direction: column;
@@ -1921,29 +1921,26 @@ header.scrolled {
     max-width: 100%;
   }
   .newsletter-form input {
-    height: 42px;
+    height: 40px;
     font-size: 0.75rem;
   }
   .newsletter-form button {
-    height: 42px;
+    height: 40px;
     padding: 0 18px;
     font-size: 0.688rem;
   }
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    padding: 16px 6px 10px;
+    gap: 8px;
+    padding: 14px 10px 10px;
     text-align: center;
-  }
-  .footer-grid * {
-    font-size: 12px;
   }
   .footer-brand {
     grid-column: 1 / -1;
   }
   .footer-brand .logo {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .footer-brand p {
     margin: 0 auto 8px;
@@ -1952,15 +1949,19 @@ header.scrolled {
     line-height: 1.4;
   }
   .footer-col h4 {
-    font-size: 12px;
-    margin-bottom: 4px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--neutral);
   }
   .footer-col a {
-    font-size: 11px;
-    padding: 1px 0;
+    font-size: 12px;
+    padding: 2px 0;
+    color: rgba(255, 253, 248, 0.45);
   }
   .service-areas {
-    padding: 14px 0 10px;
+    padding: 10px 0 8px;
   }
   .service-areas p {
     font-size: 0.6rem;
@@ -1977,7 +1978,7 @@ header.scrolled {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
-    padding: 14px 0 6px;
+    padding: 12px 0 8px;
     gap: 8px;
   }
   .footer-bottom p {
@@ -1985,12 +1986,12 @@ header.scrolled {
   }
   .social-links {
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
   }
   .social-links a {
-    width: 32px;
-    height: 32px;
-    font-size: 0.6rem;
+    width: 34px;
+    height: 34px;
+    font-size: 0.65rem;
   }
   .contact-grid {
     grid-template-columns: 1fr;
