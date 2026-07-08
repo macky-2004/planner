@@ -347,7 +347,7 @@ main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
 }
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 700; margin-bottom: 12px; color: var(--primary);
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
@@ -431,28 +431,96 @@ main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
    Alternating Deep Navy / Soft Ivory backgrounds
    ============================================ */
 
-/* Services & Pricing Sections → Light bg, glass cards with dark text */
+/* --- 'What We Offer' — light bg, navy text --- */
 #services,
 .section:has(.services-grid) {
   background: var(--neutral);
 }
 #services .section-title,
-#services .section-desc,
+#services h2,
+#services h3,
+#services h4,
+#services p,
 .section:has(.services-grid) .section-title,
-.section:has(.services-grid) .section-desc {
-  color: var(--dark-text);
+.section:has(.services-grid) h2,
+.section:has(.services-grid) h3,
+.section:has(.services-grid) h4,
+.section:has(.services-grid) p {
+  color: #0F172A !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  opacity: 1 !important;
+}
+#services .section-eyebrow {
+  color: #FFFFFF !important;
 }
 
-/* Pricing Section */
+/* --- 'Portfolio' ('Our Work') — light bg, navy text --- */
+#portfolio h2,
+#portfolio h3,
+#portfolio h4,
+#portfolio p {
+  color: #0F172A !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  opacity: 1 !important;
+}
+#portfolio .section-eyebrow {
+  color: #FFFFFF !important;
+}
+#portfolio .section-desc {
+  color: #0F172A !important;
+}
+/* Portfolio overlay text sits on a dark gradient — keep it white */
+#portfolio .portfolio-overlay .card-title,
+#portfolio .portfolio-overlay .card-desc {
+  color: #FFFFFF !important;
+  text-shadow: none;
+  opacity: 1 !important;
+}
+
+/* --- 'Packages' — dark bg, white text --- */
 #pricing {
-  background: var(--neutral);
+  background: #0F172A;
+}
+#pricing h2,
+#pricing h3,
+#pricing h4,
+#pricing p {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
 }
 #pricing .section-title {
-  color: #FFFDF8;
+  color: #FFFFFF;
 }
 #pricing .section-desc {
   color: #FFFFFF !important;
   letter-spacing: 0.5px;
+}
+#pricing .pricing-card h4,
+#pricing .pricing-card p,
+#pricing .pricing-card .pricing-feature {
+  color: #FFFDF8 !important;
+}
+
+/* --- 'Questions?' — dark bg, white text --- */
+#faq h2,
+#faq h3,
+#faq h4,
+#faq p {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+#faq .section-desc {
+  color: rgba(255,255,255,0.8) !important;
+}
+#faq .faq-question {
+  color: #FFFFFF;
+}
+#faq .faq-answer {
+  color: rgba(255,255,255,0.8);
+  opacity: 1;
+}
+#faq .faq-toggle {
+  color: #D4AF37;
 }
 
 /* Stats Grid → Always Soft Ivory bg regardless of parent */
