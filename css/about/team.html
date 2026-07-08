@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team | Aether Events — Premium Event Planners</title>
+  <meta name="description" content="Meet the talented team behind Aether Events. Experienced event planners, decorators, and coordinators serving Tamil Nadu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="announcement-text">Free Consultation Available</span>
+    <span class="announcement-text" style="display:none">Serving All of Tamil Nadu</span>
+    <span class="announcement-text" style="display:none">Book 6+ Months Ahead for Weddings</span>
+    <button class="announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Aether Events Home">
+        <span class="logo-icon">AE</span>
+        <span class="logo-text">Aether Events</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/" class="active">About</a></li>
+        <li>
+          <a href="/services/">Services <span class="chevron">&#9662;</span></a>
+          <div class="mega-dropdown">
+            <div class="mega-dropdown-grid">
+              <div>
+                <h4>Weddings &amp; Events</h4>
+                <ul>
+                  <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+                  <li><a href="/services/engagement-planning/">Engagement Planning</a></li>
+                  <li><a href="/services/anniversary-celebrations/">Anniversary</a></li>
+                  <li><a href="/services/private-parties/">Private Parties</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Celebrations</h4>
+                <ul>
+                  <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+                  <li><a href="/services/baby-shower/">Baby Shower</a></li>
+                  <li><a href="/services/corporate-events/">Corporate Events</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Decoration</h4>
+                <ul>
+                  <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+                  <li><a href="/services/floral-decoration/">Floral Decoration</a></li>
+                  <li><a href="/services/balloon-decoration/">Balloon Decoration</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Media &amp; Extras</h4>
+                <ul>
+                  <li><a href="/services/photography-videography/">Photography &amp; Video</a></li>
+                  <li><a href="/services/entertainment/">Entertainment</a></li>
+                  <li><a href="/services/catering-coordination/">Catering</a></li>
+                  <li><a href="/services/invitation-design/">Invitation Design</a></li>
+                  <li><a href="/services/return-gifts/">Return Gifts</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-footer">
+              <a href="/services/">View All Services &rarr;</a>
+              <a href="/get-quote/">Get Custom Quote &rarr;</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/portfolio/">Portfolio <span class="chevron">&#9662;</span></a>
+          <div class="mega-dropdown" style="min-width:500px;">
+            <div class="mega-dropdown-grid" style="grid-template-columns: 1fr 1fr;">
+              <div>
+                <h4>By Event Type</h4>
+                <ul>
+                  <li><a href="/portfolio/weddings/">Weddings</a></li>
+                  <li><a href="/portfolio/birthdays/">Birthdays</a></li>
+                  <li><a href="/portfolio/corporate-events/">Corporate</a></li>
+                  <li><a href="/portfolio/baby-showers/">Baby Showers</a></li>
+                  <li><a href="/portfolio/anniversaries/">Anniversaries</a></li>
+                  <li><a href="/portfolio/private-parties/">Private Parties</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>By Style</h4>
+                <ul>
+                  <li><a href="/portfolio/weddings/">Traditional</a></li>
+                  <li><a href="/portfolio/weddings/">Modern Luxury</a></li>
+                  <li><a href="/portfolio/weddings/">Rustic Elegance</a></li>
+                  <li><a href="/portfolio/birthdays/">Floral Fantasy</a></li>
+                  <li><a href="/portfolio/birthdays/">Themed Celebrations</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-footer">
+              <a href="/portfolio/">View Full Gallery &rarr;</a>
+              <a href="/get-quote/">Share Your Event Idea &rarr;</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-phone">
+          <a href="tel:+919876543210" aria-label="Call us at +91 98765 43210">&#128222; +91 98765 43210</a>
+        </div>
+        <a href="/book-consultation/" class="btn btn-primary">Book Free Consultation</a>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="has-subnav">
+          <a href="/services/">Services <span class="chevron">&#9662;</span></a>
+          <ul class="mobile-subnav">
+            <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+            <li><a href="/services/engagement-planning/">Engagement Planning</a></li>
+            <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+            <li><a href="/services/baby-shower/">Baby Shower</a></li>
+            <li><a href="/services/corporate-events/">Corporate Events</a></li>
+            <li><a href="/services/anniversary-celebrations/">Anniversary</a></li>
+            <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+            <li><a href="/services/photography-videography/">Photography</a></li>
+            <li><a href="/services/entertainment/">Entertainment</a></li>
+            <li><a href="/services/catering-coordination/">Catering</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav">
+          <a href="/portfolio/">Portfolio <span class="chevron">&#9662;</span></a>
+          <ul class="mobile-subnav">
+            <li><a href="/portfolio/weddings/">Weddings</a></li>
+            <li><a href="/portfolio/birthdays/">Birthdays</a></li>
+            <li><a href="/portfolio/corporate-events/">Corporate</a></li>
+            <li><a href="/portfolio/baby-showers/">Baby Showers</a></li>
+            <li><a href="/portfolio/anniversaries/">Anniversaries</a></li>
+          </ul>
+        </li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a href="/book-consultation/" class="btn btn-primary" style="width:100%;">Book Free Consultation</a>
+      </div>
+      <div class="mobile-contact">
+        <a href="tel:+919876543210">&#128222; +91 98765 43210</a><br>
+        <a href="https://wa.me/919876543210" target="_blank">&#128242; WhatsApp</a><br>
+        <a href="mailto:hello@aetherevents.com">&#9993; hello@aetherevents.com</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Mini Hero -->
+    <section class="hero hero-mini page-header" aria-label="Team header">
+      <div class="hero-bg">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80&auto=format,compress">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format,compress" alt="Aether Events team working together" loading="eager">
+        </picture>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="eyebrow" data-reveal data-reveal-delay="0">Aether Events</span>
+        <h1 data-reveal data-reveal-delay="150">Meet the Aether Events Team</h1>
+        <p data-reveal data-reveal-delay="300">The passionate professionals behind every unforgettable celebration.</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">/</span>
+        <a href="/about/">About</a>
+        <span class="separator">/</span>
+        <span class="current">Our Team</span>
+      </nav>
+    </div>
+
+    <!-- Team Grid -->
+    <section class="section" aria-label="Our team members">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">Our People</span>
+          <h2>The Faces of Aether Events</h2>
+          <p>Meet the dedicated team that makes every celebration extraordinary.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="team-grid">
+          <div class="card" data-reveal>
+            <div class="card-img" style="aspect-ratio:1/1;">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80&auto=format,compress" alt="Ananya Sharma - Founder & Creative Director" loading="lazy">
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <h3>Ananya Sharma</h3>
+              <p style="color:var(--secondary);font-weight:600;font-size:0.813rem;">Founder &amp; Creative Director</p>
+              <p style="font-size:0.813rem;">Visionary leader with 10+ years of experience in luxury event design. Ananya founded Aether Events to bring world-class event planning to Tamil Nadu.</p>
+            </div>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="80">
+            <div class="card-img" style="aspect-ratio:1/1;">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format,compress" alt="Priya Karthik - Head of Operations" loading="lazy">
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <h3>Priya Karthik</h3>
+              <p style="color:var(--secondary);font-weight:600;font-size:0.813rem;">Head of Operations</p>
+              <p style="font-size:0.813rem;">The logistical wizard who ensures flawless execution. Priya oversees vendor coordination, timelines, and on-ground management.</p>
+            </div>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="160">
+            <div class="card-img" style="aspect-ratio:1/1;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format,compress" alt="Arun Rajan - Lead Designer" loading="lazy">
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <h3>Arun Rajan</h3>
+              <p style="color:var(--secondary);font-weight:600;font-size:0.813rem;">Lead Designer</p>
+              <p style="font-size:0.813rem;">Creative mastermind behind our award-winning décor concepts. Arun specializes in transforming spaces into immersive experiences.</p>
+            </div>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="240">
+            <div class="card-img" style="aspect-ratio:1/1;">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format,compress" alt="Meena Lakshmi - Client Relations Manager" loading="lazy">
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <h3>Meena Lakshmi</h3>
+              <p style="color:var(--secondary);font-weight:600;font-size:0.813rem;">Client Relations Manager</p>
+              <p style="font-size:0.813rem;">Your dedicated point of contact. Meena ensures every client feels heard, valued, and guided throughout their event journey.</p>
+            </div>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="320">
+            <div class="card-img" style="aspect-ratio:1/1;">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&auto=format,compress" alt="Kavya Ramesh - Senior Event Coordinator" loading="lazy">
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <h3>Kavya Ramesh</h3>
+              <p style="color:var(--secondary);font-weight:600;font-size:0.813rem;">Senior Event Coordinator</p>
+              <p style="font-size:0.813rem;">Detail-oriented coordinator who thrives under pressure. Kavya has successfully managed 100+ events across Tamil Nadu.</p>
+            </div>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="400">
+            <div class="card-img" style="aspect-ratio:1/1;">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format,compress" alt="Vikram Sundar - Head of Vendor Relations" loading="lazy">
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <h3>Vikram Sundar</h3>
+              <p style="color:var(--secondary);font-weight:600;font-size:0.813rem;">Head of Vendor Relations</p>
+              <p style="font-size:0.813rem;">The man who knows everyone. Vikram manages our network of 50+ trusted vendors and negotiates the best for our clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section bg-ivory" aria-label="Our values">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">What Drives Us</span>
+          <h2>Our Core Values</h2>
+          <p>Principles that guide our team in every event we plan.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="values-grid">
+          <div class="value-card" data-reveal>
+            <div class="icon">&#10024;</div>
+            <h4>Creativity</h4>
+            <p>Every event is a blank canvas. We paint with imagination and flair.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="80">
+            <div class="icon">&#128065;</div>
+            <h4>Attention</h4>
+            <p>No detail is too small. We obsess over perfection.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="160">
+            <div class="icon">&#128154;</div>
+            <h4>Passion</h4>
+            <p>We love what we do, and it shows in every celebration.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="240">
+            <div class="icon">&#128142;</div>
+            <h4>Excellence</h4>
+            <p>Good is never enough. We strive for extraordinary.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="320">
+            <div class="icon">&#129309;</div>
+            <h4>Collaboration</h4>
+            <p>Together with clients and vendors, we create magic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-label="Call to action">
+      <div class="cta-banner-bg">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80&auto=format,compress" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="container cta-banner-content">
+        <h2 data-reveal>Ready to Start Your Celebration Story?</h2>
+        <p data-reveal>Let's create something beautiful together. Book your free consultation today.</p>
+        <div class="hero-actions" data-reveal>
+          <a href="/book-consultation/" class="btn btn-primary btn-lg">Book Free Consultation</a>
+          <a href="/get-quote/" class="btn btn-ghost-dark btn-lg">Get a Custom Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="newsletter-band">
+      <div class="container">
+        <h3>Join Our Celebration Circle</h3>
+        <p>Get event inspiration, tips, and exclusive offers delivered to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; Aether && Aether.showToast('Subscribed! Welcome to the club.', 'success');">
+          <input type="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo" style="color:var(--neutral);">
+              <span class="logo-icon" style="background:var(--secondary);color:var(--primary);">AE</span>
+              <span class="logo-text" style="color:var(--neutral);">Aether Events</span>
+            </div>
+            <p>Premium event planning and management company in Tamil Nadu. We transform celebrations into timeless memories through creativity, professionalism, and personalized service.</p>
+            <div class="footer-trust">
+              <span><strong>500+</strong> Events</span>
+              <span><strong>4.9&#9733;</strong> Rating</span>
+              <span><strong>15+</strong> Cities</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+              <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+              <li><a href="/services/corporate-events/">Corporate Events</a></li>
+              <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+              <li><a href="/services/photography-videography/">Photography</a></li>
+              <li><a href="/services/entertainment/">Entertainment</a></li>
+              <li><a href="/services/">View All &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="/about/process/">Our Process</a></li>
+              <li><a href="/careers/">Careers</a></li>
+              <li><a href="/about/press/">Press &amp; Media</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/aetherevents" target="_blank" aria-label="Instagram">&#10070;</a>
+              <a href="https://www.facebook.com/aetherevents" target="_blank" aria-label="Facebook">f</a>
+              <a href="https://www.youtube.com/aetherevents" target="_blank" aria-label="YouTube">&#9654;</a>
+              <a href="https://www.linkedin.com/company/aetherevents" target="_blank" aria-label="LinkedIn">in</a>
+              <a href="https://www.pinterest.com/aetherevents" target="_blank" aria-label="Pinterest">P</a>
+              <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">&#128242;</a>
+            </div>
+            <p style="margin-top:var(--space-lg);font-size:0.813rem;">
+              <strong style="color:var(--neutral);">Phone:</strong> <a href="tel:+919876543210" style="color:rgba(255,253,248,0.7);">+91 98765 43210</a><br>
+              <strong style="color:var(--neutral);">Email:</strong> <a href="mailto:hello@aetherevents.com" style="color:rgba(255,253,248,0.7);">hello@aetherevents.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-areas">
+      <div class="container">
+        <p>Serving Across Tamil Nadu</p>
+        <div class="area-pills">
+          <a href="/venues/">Thanjavur</a>
+          <a href="/venues/">Trichy</a>
+          <a href="/venues/">Kumbakonam</a>
+          <a href="/venues/">Pattukkottai</a>
+          <a href="/venues/">Pudukottai</a>
+          <a href="/venues/">Chennai</a>
+          <a href="/venues/">Madurai</a>
+          <a href="/venues/">Coimbatore</a>
+          <a href="/venues/">Salem</a>
+          <a href="/venues/">Tamil Nadu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-md);">
+        <span>&copy; 2026 Aether Events. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+          <a href="/sitemap/">Sitemap</a>
+        </div>
+        <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FABs -->
+  <div class="fab-container">
+    <button class="fab fab-top" aria-label="Scroll to top">&uarr;</button>
+    <a href="tel:+919876543210" class="fab fab-phone" aria-label="Call us">&#128222;</a>
+    <a href="https://wa.me/919876543210" target="_blank" class="fab fab-whatsapp" aria-label="Chat on WhatsApp">&#128242;</a>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing, you agree to our use of cookies.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-primary btn-sm cookie-accept">Accept All</button>
+        <button class="btn btn-secondary btn-sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+    <button class="lightbox-next" aria-label="Next">&#8250;</button>
+    <img src="" alt="Lightbox image">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

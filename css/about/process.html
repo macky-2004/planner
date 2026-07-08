@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Event Planning Process | How We Work — Aether Events</title>
+  <meta name="description" content="Discover our 13-step event planning process. From free consultation to flawless execution, see how Aether Events creates unforgettable celebrations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="announcement-text">Free Consultation Available</span>
+    <span class="announcement-text" style="display:none">Serving All of Tamil Nadu</span>
+    <span class="announcement-text" style="display:none">Book 6+ Months Ahead for Weddings</span>
+    <button class="announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Aether Events Home">
+        <span class="logo-icon">AE</span>
+        <span class="logo-text">Aether Events</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/" class="active">About</a></li>
+        <li>
+          <a href="/services/">Services <span class="chevron">&#9662;</span></a>
+          <div class="mega-dropdown">
+            <div class="mega-dropdown-grid">
+              <div>
+                <h4>Weddings &amp; Events</h4>
+                <ul>
+                  <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+                  <li><a href="/services/engagement-planning/">Engagement Planning</a></li>
+                  <li><a href="/services/anniversary-celebrations/">Anniversary</a></li>
+                  <li><a href="/services/private-parties/">Private Parties</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Celebrations</h4>
+                <ul>
+                  <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+                  <li><a href="/services/baby-shower/">Baby Shower</a></li>
+                  <li><a href="/services/corporate-events/">Corporate Events</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Decoration</h4>
+                <ul>
+                  <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+                  <li><a href="/services/floral-decoration/">Floral Decoration</a></li>
+                  <li><a href="/services/balloon-decoration/">Balloon Decoration</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Media &amp; Extras</h4>
+                <ul>
+                  <li><a href="/services/photography-videography/">Photography &amp; Video</a></li>
+                  <li><a href="/services/entertainment/">Entertainment</a></li>
+                  <li><a href="/services/catering-coordination/">Catering</a></li>
+                  <li><a href="/services/invitation-design/">Invitation Design</a></li>
+                  <li><a href="/services/return-gifts/">Return Gifts</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-footer">
+              <a href="/services/">View All Services &rarr;</a>
+              <a href="/get-quote/">Get Custom Quote &rarr;</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/portfolio/">Portfolio <span class="chevron">&#9662;</span></a>
+          <div class="mega-dropdown" style="min-width:500px;">
+            <div class="mega-dropdown-grid" style="grid-template-columns: 1fr 1fr;">
+              <div>
+                <h4>By Event Type</h4>
+                <ul>
+                  <li><a href="/portfolio/weddings/">Weddings</a></li>
+                  <li><a href="/portfolio/birthdays/">Birthdays</a></li>
+                  <li><a href="/portfolio/corporate-events/">Corporate</a></li>
+                  <li><a href="/portfolio/baby-showers/">Baby Showers</a></li>
+                  <li><a href="/portfolio/anniversaries/">Anniversaries</a></li>
+                  <li><a href="/portfolio/private-parties/">Private Parties</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>By Style</h4>
+                <ul>
+                  <li><a href="/portfolio/weddings/">Traditional</a></li>
+                  <li><a href="/portfolio/weddings/">Modern Luxury</a></li>
+                  <li><a href="/portfolio/weddings/">Rustic Elegance</a></li>
+                  <li><a href="/portfolio/birthdays/">Floral Fantasy</a></li>
+                  <li><a href="/portfolio/birthdays/">Themed Celebrations</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-footer">
+              <a href="/portfolio/">View Full Gallery &rarr;</a>
+              <a href="/get-quote/">Share Your Event Idea &rarr;</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-phone">
+          <a href="tel:+919876543210" aria-label="Call us at +91 98765 43210">&#128222; +91 98765 43210</a>
+        </div>
+        <a href="/book-consultation/" class="btn btn-primary">Book Free Consultation</a>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="has-subnav">
+          <a href="/services/">Services <span class="chevron">&#9662;</span></a>
+          <ul class="mobile-subnav">
+            <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+            <li><a href="/services/engagement-planning/">Engagement Planning</a></li>
+            <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+            <li><a href="/services/baby-shower/">Baby Shower</a></li>
+            <li><a href="/services/corporate-events/">Corporate Events</a></li>
+            <li><a href="/services/anniversary-celebrations/">Anniversary</a></li>
+            <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+            <li><a href="/services/photography-videography/">Photography</a></li>
+            <li><a href="/services/entertainment/">Entertainment</a></li>
+            <li><a href="/services/catering-coordination/">Catering</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav">
+          <a href="/portfolio/">Portfolio <span class="chevron">&#9662;</span></a>
+          <ul class="mobile-subnav">
+            <li><a href="/portfolio/weddings/">Weddings</a></li>
+            <li><a href="/portfolio/birthdays/">Birthdays</a></li>
+            <li><a href="/portfolio/corporate-events/">Corporate</a></li>
+            <li><a href="/portfolio/baby-showers/">Baby Showers</a></li>
+            <li><a href="/portfolio/anniversaries/">Anniversaries</a></li>
+          </ul>
+        </li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a href="/book-consultation/" class="btn btn-primary" style="width:100%;">Book Free Consultation</a>
+      </div>
+      <div class="mobile-contact">
+        <a href="tel:+919876543210">&#128222; +91 98765 43210</a><br>
+        <a href="https://wa.me/919876543210" target="_blank">&#128242; WhatsApp</a><br>
+        <a href="mailto:hello@aetherevents.com">&#9993; hello@aetherevents.com</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Mini Hero -->
+    <section class="hero hero-mini page-header" aria-label="Process header">
+      <div class="hero-bg">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80&auto=format,compress">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80&auto=format,compress" alt="Beautiful event setup with ambient lighting" loading="eager">
+        </picture>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="eyebrow" data-reveal data-reveal-delay="0">Aether Events</span>
+        <h1 data-reveal data-reveal-delay="150">Our Event Planning Process</h1>
+        <p data-reveal data-reveal-delay="300">A proven 13-step methodology that ensures flawless execution from start to finish.</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">/</span>
+        <a href="/about/">About</a>
+        <span class="separator">/</span>
+        <span class="current">Our Process</span>
+      </nav>
+    </div>
+
+    <!-- Process Overview -->
+    <section class="section" aria-label="Process overview">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">How We Work</span>
+          <h2>From Vision to Reality</h2>
+          <p>Our 13-step process ensures no detail is overlooked. We guide you through every stage of planning, from the first conversation to the final farewell.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="content-grid">
+          <div class="content-img" data-reveal>
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80&auto=format,compress" alt="Event planning team in a strategy meeting" loading="lazy">
+          </div>
+          <div class="content-text" data-reveal>
+            <p>At Aether Events, we believe that great events are built on great processes. Our carefully crafted 13-step methodology has been refined through hundreds of successful celebrations across Tamil Nadu.</p>
+            <p>Whether you're planning an intimate birthday party or a grand 500-guest wedding, our process scales to match your needs. Each step is designed to reduce stress, increase clarity, and ensure a spectacular result.</p>
+            <p>From the moment you reach out to the moment your celebration ends, you'll have a dedicated team working tirelessly behind the scenes. Here's exactly how we bring your vision to life.</p>
+            <a href="/book-consultation/" class="btn btn-primary">Start Your Journey</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13-Step Process Timeline -->
+    <section class="section bg-ivory" aria-label="Planning process timeline">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">The Process</span>
+          <h2>Our 13-Step Planning Methodology</h2>
+          <p>Every step designed to bring clarity, creativity, and precision to your event.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="process-steps">
+          <div class="process-step" data-reveal>
+            <div>
+              <h3>Free Initial Consultation</h3>
+              <p>We meet (in person or virtually) to understand your vision, requirements, budget, and expectations. This no-obligation conversation helps us determine if we're the right fit for each other.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="50">
+            <div>
+              <h3>Proposal &amp; Custom Quote</h3>
+              <p>Based on our discussion, we create a detailed proposal outlining the scope of work, design concepts, vendor recommendations, and a transparent pricing breakdown tailored to your budget.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="100">
+            <div>
+              <h3>Booking &amp; Agreement</h3>
+              <p>Once you approve the proposal, we finalize the contract, collect the initial deposit, and officially reserve your date. Your dedicated event manager is assigned at this stage.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="150">
+            <div>
+              <h3>Venue Selection &amp; Booking</h3>
+              <p>We help you find and book the perfect venue — whether it's a grand banquet hall, a scenic outdoor location, or an intimate community space. We handle negotiations and site visits.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="200">
+            <div>
+              <h3>Design &amp; Theme Development</h3>
+              <p>Our creative team develops a comprehensive design concept including color palettes, décor styles, floral arrangements, lighting design, and thematic elements that reflect your personality.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="250">
+            <div>
+              <h3>Vendor Selection &amp; Coordination</h3>
+              <p>We tap into our network of 50+ trusted vendors to recommend and book photographers, caterers, entertainers, florists, decorators, and more. We handle all contracts and coordination.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="300">
+            <div>
+              <h3>Budget Management</h3>
+              <p>We track every expense against your budget, providing regular updates and transparent reports. We negotiate vendor pricing to ensure you get the best value without compromising quality.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="350">
+            <div>
+              <h3>Guest List &amp; Invitations</h3>
+              <p>We assist with guest list management, invitation design and distribution (digital or print), RSVP tracking, and seating arrangement planning.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="400">
+            <div>
+              <h3>Timeline &amp; Run Sheet Creation</h3>
+              <p>A minute-by-minute timeline is created for the event day, covering setup, ceremonies, entertainment, meals, and wrap-up. Every vendor and team member receives their schedule.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="450">
+            <div>
+              <h3>Rehearsals &amp; Walkthroughs</h3>
+              <p>We conduct rehearsals and venue walkthroughs with all key participants to ensure everyone knows their role. This eliminates confusion and ensures smooth coordination on event day.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="500">
+            <div>
+              <h3>Final Countdown &amp; Quality Check</h3>
+              <p>In the week leading up to your event, we conduct a comprehensive quality check — confirming all vendor bookings, reviewing décor plans, inspecting venues, and preparing backup plans.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="550">
+            <div>
+              <h3>Event Day Execution</h3>
+              <p>Your dedicated team manages every aspect of the event — vendor arrivals, setup supervision, timeline enforcement, guest coordination, and real-time problem solving. You relax and enjoy.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="600">
+            <div>
+              <h3>Post-Event Follow-Up</h3>
+              <p>After your celebration, we handle vendor payments, collect your photos and videos, and conduct a debrief session. Your feedback helps us continually improve and perfect our craft.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Your Role vs Our Role -->
+    <section class="section" aria-label="Roles and responsibilities">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">Collaboration</span>
+          <h2>Your Role vs Our Role</h2>
+          <p>Clear expectations mean a smooth partnership from start to finish.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="two-col">
+          <div class="card" data-reveal>
+            <div class="card-body">
+              <h3 style="color:var(--secondary);">&#128100; Your Role</h3>
+              <ul style="list-style:none;padding:0;margin-top:var(--space-md);">
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Share your vision, preferences, and must-haves</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Approve design concepts, vendor selections, and budget</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Provide guest list and key participant details</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Make timely payments as per the payment schedule</li>
+                <li style="padding:10px 0;display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Show up and enjoy your celebration!</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" data-reveal data-reveal-delay="100">
+            <div class="card-body">
+              <h3 style="color:var(--secondary);">&#128081; Our Role</h3>
+              <ul style="list-style:none;padding:0;margin-top:var(--space-md);">
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Bring creative concepts and actionable plans</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Research, vet, and coordinate all vendors</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Manage budgets, timelines, and logistics</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border-color);display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Handle all on-the-day coordination and problem solving</li>
+                <li style="padding:10px 0;display:flex;gap:var(--space-sm);align-items:flex-start;"><span style="color:var(--secondary);">&#9654;</span> Ensure everything runs perfectly so you don't have to worry</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality Checkpoints -->
+    <section class="section bg-ivory" aria-label="Quality checkpoints">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">Excellence Guaranteed</span>
+          <h2>Quality Checkpoints</h2>
+          <p>We maintain rigorous quality standards throughout the planning journey.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="values-grid" style="grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));">
+          <div class="value-card" data-reveal>
+            <div class="icon">&#9989;</div>
+            <h4>Vendor Vetting</h4>
+            <p>Every vendor in our network is thoroughly vetted for quality, reliability, and professionalism before being recommended.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="80">
+            <div class="icon">&#9989;</div>
+            <h4>Design Approval</h4>
+            <p>All design concepts require your sign-off before execution. We provide mockups, mood boards, and sample materials.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="160">
+            <div class="icon">&#9989;</div>
+            <h4>Budget Audits</h4>
+            <p>Regular budget reviews ensure we stay on track. You receive transparent reports at every milestone.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="240">
+            <div class="icon">&#9989;</div>
+            <h4>Venue Inspection</h4>
+            <p>We conduct multiple site visits before the event to verify setup, safety, and readiness.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="320">
+            <div class="icon">&#9989;</div>
+            <h4>Rehearsal Run</h4>
+            <p>Full rehearsal ensures every participant, vendor, and team member knows exactly what to do.</p>
+          </div>
+          <div class="value-card" data-reveal data-reveal-delay="400">
+            <div class="icon">&#9989;</div>
+            <h4>Post-Event Review</h4>
+            <p>We debrief after every event to celebrate wins and identify opportunities for improvement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-label="Call to action">
+      <div class="cta-banner-bg">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80&auto=format,compress" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="container cta-banner-content">
+        <h2 data-reveal>Ready to Start Your Celebration Story?</h2>
+        <p data-reveal>Let's create something beautiful together. Book your free consultation today.</p>
+        <div class="hero-actions" data-reveal>
+          <a href="/book-consultation/" class="btn btn-primary btn-lg">Book Free Consultation</a>
+          <a href="/get-quote/" class="btn btn-ghost-dark btn-lg">Get a Custom Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="newsletter-band">
+      <div class="container">
+        <h3>Join Our Celebration Circle</h3>
+        <p>Get event inspiration, tips, and exclusive offers delivered to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; Aether && Aether.showToast('Subscribed! Welcome to the club.', 'success');">
+          <input type="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo" style="color:var(--neutral);">
+              <span class="logo-icon" style="background:var(--secondary);color:var(--primary);">AE</span>
+              <span class="logo-text" style="color:var(--neutral);">Aether Events</span>
+            </div>
+            <p>Premium event planning and management company in Tamil Nadu. We transform celebrations into timeless memories through creativity, professionalism, and personalized service.</p>
+            <div class="footer-trust">
+              <span><strong>500+</strong> Events</span>
+              <span><strong>4.9&#9733;</strong> Rating</span>
+              <span><strong>15+</strong> Cities</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+              <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+              <li><a href="/services/corporate-events/">Corporate Events</a></li>
+              <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+              <li><a href="/services/photography-videography/">Photography</a></li>
+              <li><a href="/services/entertainment/">Entertainment</a></li>
+              <li><a href="/services/">View All &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="/about/process/">Our Process</a></li>
+              <li><a href="/careers/">Careers</a></li>
+              <li><a href="/about/press/">Press &amp; Media</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/aetherevents" target="_blank" aria-label="Instagram">&#10070;</a>
+              <a href="https://www.facebook.com/aetherevents" target="_blank" aria-label="Facebook">f</a>
+              <a href="https://www.youtube.com/aetherevents" target="_blank" aria-label="YouTube">&#9654;</a>
+              <a href="https://www.linkedin.com/company/aetherevents" target="_blank" aria-label="LinkedIn">in</a>
+              <a href="https://www.pinterest.com/aetherevents" target="_blank" aria-label="Pinterest">P</a>
+              <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">&#128242;</a>
+            </div>
+            <p style="margin-top:var(--space-lg);font-size:0.813rem;">
+              <strong style="color:var(--neutral);">Phone:</strong> <a href="tel:+919876543210" style="color:rgba(255,253,248,0.7);">+91 98765 43210</a><br>
+              <strong style="color:var(--neutral);">Email:</strong> <a href="mailto:hello@aetherevents.com" style="color:rgba(255,253,248,0.7);">hello@aetherevents.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-areas">
+      <div class="container">
+        <p>Serving Across Tamil Nadu</p>
+        <div class="area-pills">
+          <a href="/venues/">Thanjavur</a>
+          <a href="/venues/">Trichy</a>
+          <a href="/venues/">Kumbakonam</a>
+          <a href="/venues/">Pattukkottai</a>
+          <a href="/venues/">Pudukottai</a>
+          <a href="/venues/">Chennai</a>
+          <a href="/venues/">Madurai</a>
+          <a href="/venues/">Coimbatore</a>
+          <a href="/venues/">Salem</a>
+          <a href="/venues/">Tamil Nadu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-md);">
+        <span>&copy; 2026 Aether Events. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+          <a href="/sitemap/">Sitemap</a>
+        </div>
+        <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FABs -->
+  <div class="fab-container">
+    <button class="fab fab-top" aria-label="Scroll to top">&uarr;</button>
+    <a href="tel:+919876543210" class="fab fab-phone" aria-label="Call us">&#128222;</a>
+    <a href="https://wa.me/919876543210" target="_blank" class="fab fab-whatsapp" aria-label="Chat on WhatsApp">&#128242;</a>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing, you agree to our use of cookies.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-primary btn-sm cookie-accept">Accept All</button>
+        <button class="btn btn-secondary btn-sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+    <button class="lightbox-next" aria-label="Next">&#8250;</button>
+    <img src="" alt="Lightbox image">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

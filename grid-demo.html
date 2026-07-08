@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether Events — Glassmorphism Card Grid System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       AETHER EVENTS — Card Grid Architecture
+       Complete standalone system. No <ul>/<li>
+       used for any service or card layout.
+       ============================================ */
+
+    /* --- Design Tokens --- */
+    :root {
+      --primary: #0A0F1E;
+      --secondary: #D4AF37;
+      --secondary-rgb: 212, 175, 55;
+      --neutral: #FFFCF7;
+      --neutral-rgb: 255, 252, 247;
+      --muted: #8A8FA0;
+      --glass-bg: rgba(255, 252, 247, 0.04);
+      --glass-bg-hover: rgba(255, 252, 247, 0.08);
+      --glass-border: rgba(255, 252, 247, 0.10);
+      --glass-border-hover: rgba(212, 175, 55, 0.25);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
+      --glass-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.45);
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Cormorant Garamond', Georgia, serif;
+
+      --radius-card: 20px;
+      --radius-icon: 14px;
+      --transition: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* --- Reset --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--neutral);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================
+       CONTAINER — Single source of truth
+       ============================================ */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================
+       SECTION HEADER
+       ============================================ */
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header .eyebrow {
+      font-family: var(--font-accent);
+      font-size: 1.125rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .section-divider {
+      width: 72px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ============================================
+       CATEGORY SECTION WRAPPER
+       Each of the four categories uses this.
+       ============================================ */
+    .category-section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .category-section + .category-section {
+      border-top: 1px solid rgba(255, 252, 247, 0.04);
+    }
+
+    /* Subtle radial glow per category */
+    .category-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(var(--secondary-rgb), 0.03) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .category-section:nth-child(even)::before {
+      background: radial-gradient(ellipse at 50% 100%, rgba(var(--secondary-rgb), 0.02) 0%, transparent 65%);
+    }
+
+    /* --- Category label above the heading --- */
+    .category-label {
+      font-family: var(--font-accent);
+      font-size: 0.938rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .category-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .category-desc {
+      color: var(--muted);
+      font-size: 0.938rem;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    /* ============================================
+       CARD GRID — THE CORE ARCHITECTURE
+       Pure CSS Grid. No <ul>/<li> anywhere.
+       ============================================ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* --- The Glass Card --- */
+    .card {
+      /* --- Glass foundation --- */
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      /* --- Sizing --- */
+      width: 100%;
+      min-height: 280px;
+      padding: 28px 24px 32px;
+
+      /* --- Shape --- */
+      border-radius: var(--radius-card);
+      box-shadow: var(--glass-shadow);
+
+      /* --- Layout inside the card --- */
+      display: flex;
+      flex-direction: column;
+
+      /* --- Animation --- */
+      transition: all var(--transition);
+      cursor: default;
+
+      /* --- Hover shine overlay (pseudo) --- */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Card hover: lift, intensify border & shadow */
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--glass-border-hover);
+      box-shadow: var(--glass-shadow-hover);
+      background: var(--glass-bg-hover);
+    }
+
+    /* Top gold accent line — appears on hover */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    /* Subtle corner glow on hover */
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.04) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      pointer-events: none;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    /* --- Icon Frame --- */
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-icon);
+      background: rgba(var(--secondary-rgb), 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .card:hover .card-icon {
+      background: rgba(var(--secondary-rgb), 0.16);
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: scale(1.05);
+    }
+
+    /* --- Card Title --- */
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* --- Card Description --- */
+    .card-desc {
+      font-size: 0.813rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    /* --- Card Link (optional, inside card) --- */
+    .card-link {
+      color: var(--secondary);
+      font-weight: 500;
+      font-size: 0.813rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 16px;
+      transition: gap var(--transition);
+      text-decoration: none;
+    }
+
+    .card:hover .card-link {
+      gap: 8px;
+    }
+
+    /* ============================================
+       RESPONSIVE BREAKPOINTS
+       ============================================ */
+
+    /* Tablet: 2 columns */
+    @media (max-width: 1023px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile: 1 column */
+    @media (max-width: 639px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-section {
+        padding: 48px 0;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 24px 20px 28px;
+      }
+    }
+
+    /* ============================================
+       UTILITY: Demo spacing
+       ============================================ */
+    .demo-space {
+      padding: 120px 0 40px;
+      text-align: center;
+    }
+
+    .demo-space h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 12px;
+    }
+
+    .demo-space h1 span {
+      background: linear-gradient(135deg, var(--secondary), #E8C84A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .demo-space p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============================================
+         DEMO INTRO
+         ============================================ -->
+    <div class="demo-space">
+      <h1>Aether <span>Events</span></h1>
+      <p>Pure CSS Grid architecture &bull; Zero &lt;ul&gt; or &lt;li&gt; &bull; Every service is an independent glass card</p>
+      <div style="width:72px;height:2px;background:linear-gradient(90deg,transparent,var(--secondary),transparent);margin:20px auto;border-radius:2px;"></div>
+    </div>
+
+    <!-- ============================================
+         CATEGORY 01 — WEDDINGS & EVENTS
+         ============================================ -->
+    <section class="category-section">
+      <span class="category-label">01 &mdash; Love &amp; Milestones</span>
+      <h2 class="category-title">Weddings &amp; Events</h2>
+      <p class="category-desc">Every love story deserves a celebration as unique as the couple. From grand weddings to intimate ceremonies, we craft moments that echo with emotion.</p>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3 class="card-title">Wedding Planning</h3>
+          <p class="card-desc">Full-spectrum orchestration — venue curation, thematic d&eacute;cor, vendor synergy, and day-of precision management for your perfect day.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a5 5 0 0 0 5 5h3"/><circle cx="17" cy="7" r="5"/><path d="M12 21v-2a4 4 0 0 1 4-4h3"/></svg></div>
+          <h3 class="card-title">Engagement Ceremonies</h3>
+          <p class="card-desc">Elegant stage design, floral artistry, and ambiance styling that sets the perfect tone for your journey ahead together.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#127881;</div>
+          <h3 class="card-title">Anniversary Celebrations</h3>
+          <p class="card-desc">Silver jubilees, golden milestones, and intimate vow renewals — celebrate enduring love with sophistication and grace.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#127968;</div>
+          <h3 class="card-title">Private Parties</h3>
+          <p class="card-desc">Housewarmings, reunions, and cocktail evenings — intimate gatherings designed with the same precision as grand galas.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         CATEGORY 02 — CELEBRATIONS
+         ============================================ -->
+    <section class="category-section">
+      <span class="category-label">02 &mdash; Joy &amp; Gatherings</span>
+      <h2 class="category-title">Celebrations</h2>
+      <p class="category-desc">Life&rsquo;s happiest moments deserve to be amplified. We infuse every gathering with creativity, warmth, and joy.</p>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3 class="card-title">Birthday Parties</h3>
+          <p class="card-desc">Themed wonderlands for children, sophisticated soir&eacute;es for milestone adults &mdash; every age deserves its own kind of magic.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#127822;</div>
+          <h3 class="card-title">Baby Showers</h3>
+          <p class="card-desc">Traditional seemanthams to modern gender reveals &mdash; welcoming new life with warmth, elegance, and beautifully curated d&eacute;cor.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="10" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/></svg></div>
+          <h3 class="card-title">Corporate Events</h3>
+          <p class="card-desc">Conferences, product launches, award ceremonies, and team off-sites &mdash; professional, polished, and deeply impactful.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         CATEGORY 03 — DECORATION
+         ============================================ -->
+    <section class="category-section">
+      <span class="category-label">03 &mdash; Art &amp; Ambiance</span>
+      <h2 class="category-title">Decoration</h2>
+      <p class="category-desc">We transform spaces into immersive environments. Every texture, hue, and lighting element is layered with intention.</p>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M4 4h16v12H4z"/></svg></div>
+          <h3 class="card-title">Venue Decoration</h3>
+          <p class="card-desc">Stage design, entrance installations, ceiling draping, and themed environments that completely transform any space.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M12 3v6"/><path d="M6 9h12"/><path d="M12 15v6"/></svg></div>
+          <h3 class="card-title">Floral Decoration</h3>
+          <p class="card-desc">Bespoke floral artistry &mdash; mandap florals, bridal bouquets, table centerpieces, and lush botanical installations.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8 14s0 4 4 6 4-6 4-6"/><path d="M6 2c-1.5 2-2 4-2 6s2 4 4 4"/><path d="M18 2c1.5 2 2 4 2 6s-2 4-4 4"/></svg></div>
+          <h3 class="card-title">Balloon Decoration</h3>
+          <p class="card-desc">Organic arches, balloon walls, and themed sculptural installations that bring color and whimsy to any celebration.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         CATEGORY 04 — MEDIA & EXTRAS
+         ============================================ -->
+    <section class="category-section">
+      <span class="category-label">04 &mdash; Capture &amp; Complete</span>
+      <h2 class="category-title">Media &amp; Extras</h2>
+      <p class="category-desc">The finishing touches that elevate an event from beautiful to unforgettable &mdash; from cinematic storytelling to curated culinary experiences.</p>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <h3 class="card-title">Photography &amp; Videography</h3>
+          <p class="card-desc">Candid storytelling, cinematic films, drone perspectives, and same-day edits that preserve every emotion of your celebration.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#127925;</div>
+          <h3 class="card-title">Entertainment</h3>
+          <p class="card-desc">Curated performances &mdash; live bands, DJs, cultural dancers, emcees, and interactive acts for every type of event.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <h3 class="card-title">Catering Coordination</h3>
+          <p class="card-desc">Multi-cuisine menus, live counters, dessert stations, and dietary-harmonized hospitality for a memorable dining experience.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></div>
+          <h3 class="card-title">Invitation Design</h3>
+          <p class="card-desc">Digital invites, bespoke printed suites, wedding websites, and full RSVP ecosystems that set the tone from the very first impression.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M5 8V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><polyline points="9 14 12 17 15 14"/></svg></div>
+          <h3 class="card-title">Return Gifts &amp; Favors</h3>
+          <p class="card-desc">Curated keepsakes, personalized souvenirs, and eco-conscious favors that your guests will treasure long after the event.</p>
+          <a href="#" class="card-link">Explore &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         ARCHITECTURE SUMMARY
+         ============================================ -->
+    <div style="padding:40px 0 80px;text-align:center;border-top:1px solid rgba(255,252,247,0.06);margin-top:40px;">
+      <p style="color:var(--muted);font-size:0.813rem;letter-spacing:1px;text-transform:uppercase;">
+        Grid Architecture &bull; 4 columns desktop &bull; 2 columns tablet &bull; 1 column mobile<br>
+        <span style="display:inline-block;margin-top:8px;color:var(--secondary);">
+          Zero &lt;ul&gt; &bull; Zero &lt;li&gt; &bull; Pure CSS Grid &bull; Every card is an independent article
+        </span>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

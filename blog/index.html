@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Planning Tips &amp; Ideas | Aether Events Blog — Tamil Nadu</title>
+  <meta name="description" content="Expert event planning tips, wedding ideas, decoration inspiration &amp; celebration guides from Aether Events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="scroll-progress"></div>
+  <div class="announcement-bar">
+    <span class="announcement-text">Free Consultation Available</span>
+    <span class="announcement-text" style="display:none">Serving All of Tamil Nadu</span>
+    <span class="announcement-text" style="display:none">Book 6+ Months Ahead for Weddings</span>
+    <button class="announcement-close" aria-label="Dismiss announcement">&amp;times;</button>
+  </div>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Aether Events Home">
+        <span class="logo-icon">AE</span>
+        <span class="logo-text">Aether Events</span>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Primary navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li>
+          <a href="/services/">Services <span class="chevron">&amp;#9662;</span></a>
+          <div class="mega-dropdown">
+            <div class="mega-dropdown-grid">
+              <div>
+                <h4>Weddings &amp;amp; Events</h4>
+                <ul>
+                  <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+                  <li><a href="/services/engagement-planning/">Engagement Planning</a></li>
+                  <li><a href="/services/anniversary-celebrations/">Anniversary</a></li>
+                  <li><a href="/services/private-parties/">Private Parties</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Celebrations</h4>
+                <ul>
+                  <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+                  <li><a href="/services/baby-shower/">Baby Shower</a></li>
+                  <li><a href="/services/corporate-events/">Corporate Events</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Decoration</h4>
+                <ul>
+                  <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+                  <li><a href="/services/floral-decoration/">Floral Decoration</a></li>
+                  <li><a href="/services/balloon-decoration/">Balloon Decoration</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Media &amp;amp; Extras</h4>
+                <ul>
+                  <li><a href="/services/photography-videography/">Photography &amp;amp; Video</a></li>
+                  <li><a href="/services/entertainment/">Entertainment</a></li>
+                  <li><a href="/services/catering-coordination/">Catering</a></li>
+                  <li><a href="/services/invitation-design/">Invitation Design</a></li>
+                  <li><a href="/services/return-gifts/">Return Gifts</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-footer">
+              <a href="/services/">View All Services &amp;rarr;</a>
+              <a href="/get-quote/">Get Custom Quote &amp;rarr;</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/portfolio/">Portfolio <span class="chevron">&amp;#9662;</span></a>
+          <div class="mega-dropdown" style="min-width:500px;">
+            <div class="mega-dropdown-grid" style="grid-template-columns: 1fr 1fr;">
+              <div>
+                <h4>By Event Type</h4>
+                <ul>
+                  <li><a href="/portfolio/weddings/">Weddings</a></li>
+                  <li><a href="/portfolio/birthdays/">Birthdays</a></li>
+                  <li><a href="/portfolio/corporate-events/">Corporate</a></li>
+                  <li><a href="/portfolio/baby-showers/">Baby Showers</a></li>
+                  <li><a href="/portfolio/anniversaries/">Anniversaries</a></li>
+                  <li><a href="/portfolio/private-parties/">Private Parties</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>By Style</h4>
+                <ul>
+                  <li><a href="/portfolio/weddings/">Traditional</a></li>
+                  <li><a href="/portfolio/weddings/">Modern Luxury</a></li>
+                  <li><a href="/portfolio/weddings/">Rustic Elegance</a></li>
+                  <li><a href="/portfolio/birthdays/">Floral Fantasy</a></li>
+                  <li><a href="/portfolio/birthdays/">Themed Celebrations</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-footer">
+              <a href="/portfolio/">View Full Gallery &amp;rarr;</a>
+              <a href="/get-quote/">Share Your Event Idea &amp;rarr;</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </nav>
+      <div class="header-actions">
+        <div class="header-phone">
+          <a href="tel:+919876543210" aria-label="Call us at +91 98765 43210">?? +91 98765 43210</a>
+        </div>
+        <a href="/book-consultation/" class="btn btn-primary">Book Free Consultation</a>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="has-subnav"><a href="/services/">Services <span class="chevron">&amp;#9662;</span></a>
+          <ul class="mobile-subnav">
+            <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+            <li><a href="/services/engagement-planning/">Engagement Planning</a></li>
+            <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+            <li><a href="/services/baby-shower/">Baby Shower</a></li>
+            <li><a href="/services/corporate-events/">Corporate Events</a></li>
+            <li><a href="/services/anniversary-celebrations/">Anniversary</a></li>
+            <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+            <li><a href="/services/photography-videography/">Photography</a></li>
+            <li><a href="/services/entertainment/">Entertainment</a></li>
+            <li><a href="/services/catering-coordination/">Catering</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav"><a href="/portfolio/">Portfolio <span class="chevron">&amp;#9662;</span></a>
+          <ul class="mobile-subnav">
+            <li><a href="/portfolio/weddings/">Weddings</a></li>
+            <li><a href="/portfolio/birthdays/">Birthdays</a></li>
+            <li><a href="/portfolio/corporate-events/">Corporate</a></li>
+            <li><a href="/portfolio/baby-showers/">Baby Showers</a></li>
+            <li><a href="/portfolio/anniversaries/">Anniversaries</a></li>
+          </ul>
+        </li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="mobile-cta"><a href="/book-consultation/" class="btn btn-primary" style="width:100%;">Book Free Consultation</a></div>
+      <div class="mobile-contact">
+        <a href="tel:+919876543210">?? +91 98765 43210</a><br>
+        <a href="https://wa.me/919876543210" target="_blank">?? WhatsApp</a><br>
+        <a href="mailto:hello@aetherevents.com">?? hello@aetherevents.com</a>
+      </div>
+    </nav>
+  </div>
+  <main>
+    <section class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li><a href="/">Home</a></li>
+            <li>Blog</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+    <section class="hero-mini" aria-label="Page header">
+      <div class="hero-mini-bg">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&amp;q=80&amp;auto=format,compress" alt="" aria-hidden="true" loading="eager">
+      </div>
+      <div class="hero-mini-overlay"></div>
+      <div class="container hero-mini-content">
+        <h1>Event Planning Blog — Tips, Ideas &amp; Inspiration for Tamil Nadu</h1>
+        <p class="hero-mini-sub">Inspiration for Your Next Celebration</p>
+      </div>
+    </section>    <section class="section" aria-label="Featured post">
+      <div class="container">
+        <div class="featured-post" data-reveal>
+          <div class="featured-post-img">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&amp;q=80&amp;auto=format,compress" alt="Wedding trends 2026" loading="lazy">
+            <span class="featured-badge">Featured</span>
+          </div>
+          <div class="featured-post-content">
+            <span class="card-badge">Wedding Planning</span>
+            <h2><a href="/blog/wedding-tips/10-wedding-trends-2026/">10 Wedding Trends That Will Define 2026</a></h2>
+            <p>Discover the top wedding trends for 2026 including sustainable décor, intimate gatherings, bold color palettes, and tech-enhanced celebrations that are transforming Tamil Nadu weddings.</p>
+            <div class="post-meta">
+              <span class="post-author">By Aether Events Team</span>
+              <span class="post-date">July 1, 2026</span>
+              <span class="post-read">8 min read</span>
+            </div>
+            <a href="/blog/wedding-tips/10-wedding-trends-2026/" class="btn btn-primary">Read Article &amp;rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section bg-ivory" aria-label="Blog posts">
+      <div class="container">
+        <div class="blog-layout">
+          <div class="blog-main">
+            <div class="filter-bar" role="tablist">
+              <button class="filter-btn active" data-filter="all" role="tab">All</button>
+              <button class="filter-btn" data-filter="wedding" role="tab">Wedding Planning</button>
+              <button class="filter-btn" data-filter="decor" role="tab">Decoration Ideas</button>
+              <button class="filter-btn" data-filter="birthday" role="tab">Birthday Inspiration</button>
+              <button class="filter-btn" data-filter="corporate" role="tab">Corporate Events</button>
+              <button class="filter-btn" data-filter="budget" role="tab">Budget Tips</button>
+              <button class="filter-btn" data-filter="trends" role="tab">Trends</button>
+            </div>
+            <div class="blog-grid">
+              <article class="blog-card" data-category="wedding">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&amp;q=80&amp;auto=format,compress" alt="Wedding planning tips" loading="lazy">
+                  <span class="card-badge">Wedding Planning</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/wedding-tips/wedding-planning-checklist/">Complete Wedding Planning Checklist for 2026</a></h3>
+                  <p>A comprehensive month-by-month wedding planning checklist to ensure nothing is missed for your big day in Tamil Nadu.</p>
+                  <div class="post-meta">
+                    <span class="post-date">June 25, 2026</span>
+                    <span class="post-read">12 min read</span>
+                  </div>
+                  <a href="/blog/wedding-tips/wedding-planning-checklist/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="decor">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400&amp;q=80&amp;auto=format,compress" alt="Floral decoration ideas" loading="lazy">
+                  <span class="card-badge">Decoration Ideas</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/decoration/floral-decor-trends-tamil-nadu/">Floral Decoration Trends in Tamil Nadu for 2026</a></h3>
+                  <p>From jasmine garlands to modern minimalist arrangements, explore the latest floral decoration trends across Tamil Nadu.</p>
+                  <div class="post-meta">
+                    <span class="post-date">June 18, 2026</span>
+                    <span class="post-read">6 min read</span>
+                  </div>
+                  <a href="/blog/decoration/floral-decor-trends-tamil-nadu/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="birthday">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=400&amp;q=80&amp;auto=format,compress" alt="Birthday party ideas" loading="lazy">
+                  <span class="card-badge">Birthday Inspiration</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/birthday/kids-birthday-theme-ideas/">10 Creative Kids' Birthday Theme Ideas for 2026</a></h3>
+                  <p>From superhero adventures to magical unicorn themes, find the perfect birthday party theme for your child's special day.</p>
+                  <div class="post-meta">
+                    <span class="post-date">June 10, 2026</span>
+                    <span class="post-read">5 min read</span>
+                  </div>
+                  <a href="/blog/birthday/kids-birthday-theme-ideas/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="budget">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&amp;q=80&amp;auto=format,compress" alt="Budget wedding tips" loading="lazy">
+                  <span class="card-badge">Budget Tips</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/budget/how-to-plan-wedding-on-budget/">How to Plan a Wedding on a Budget in Tamil Nadu</a></h3>
+                  <p>Smart tips to plan a beautiful wedding without breaking the bank. Learn about cost-saving strategies that don't compromise quality.</p>
+                  <div class="post-meta">
+                    <span class="post-date">June 3, 2026</span>
+                    <span class="post-read">7 min read</span>
+                  </div>
+                  <a href="/blog/budget/how-to-plan-wedding-on-budget/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="corporate">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&amp;q=80&amp;auto=format,compress" alt="Corporate event planning" loading="lazy">
+                  <span class="card-badge">Corporate Events</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/corporate/corporate-event-ideas-2026/">Innovative Corporate Event Ideas for 2026</a></h3>
+                  <p>Engage your team and impress your clients with these fresh corporate event concepts that blend professionalism with creativity.</p>
+                  <div class="post-meta">
+                    <span class="post-date">May 28, 2026</span>
+                    <span class="post-read">6 min read</span>
+                  </div>
+                  <a href="/blog/corporate/corporate-event-ideas-2026/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="trends">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&amp;q=80&amp;auto=format,compress" alt="Event trends" loading="lazy">
+                  <span class="card-badge">Trends</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/trends/event-tech-trends-2026/">Tech Trends Transforming Events in 2026</a></h3>
+                  <p>From AI-powered planning to virtual reality venue previews, explore how technology is revolutionizing the event planning industry.</p>
+                  <div class="post-meta">
+                    <span class="post-date">May 20, 2026</span>
+                    <span class="post-read">5 min read</span>
+                  </div>
+                  <a href="/blog/trends/event-tech-trends-2026/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="decoration">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400&amp;q=80&amp;auto=format,compress" alt="Table decoration" loading="lazy">
+                  <span class="card-badge">Decoration Ideas</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/decoration/table-setting-ideas/">Elegant Table Setting Ideas for Every Occasion</a></h3>
+                  <p>Transform your dining experience with these beautiful table setting ideas for weddings, birthday dinners, and corporate banquets.</p>
+                  <div class="post-meta">
+                    <span class="post-date">May 14, 2026</span>
+                    <span class="post-read">4 min read</span>
+                  </div>
+                  <a href="/blog/decoration/table-setting-ideas/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="wedding">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&amp;q=80&amp;auto=format,compress" alt="Venue selection" loading="lazy">
+                  <span class="card-badge">Wedding Planning</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/wedding-tips/choosing-wedding-venue/">How to Choose the Perfect Wedding Venue in Tamil Nadu</a></h3>
+                  <p>A guide to selecting the ideal wedding venue — from temple halls to beach resorts — across Tamil Nadu's diverse landscape.</p>
+                  <div class="post-meta">
+                    <span class="post-date">May 6, 2026</span>
+                    <span class="post-read">6 min read</span>
+                  </div>
+                  <a href="/blog/wedding-tips/choosing-wedding-venue/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+              <article class="blog-card" data-category="birthday">
+                <div class="blog-card-img">
+                  <img src="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=400&amp;q=80&amp;auto=format,compress" alt="Adult birthday" loading="lazy">
+                  <span class="card-badge">Birthday Inspiration</span>
+                </div>
+                <div class="blog-card-body">
+                  <h3><a href="/blog/birthday/milestone-birthday-ideas/">Milestone Birthday Celebration Ideas for Adults</a></h3>
+                  <p>Make your 30th, 40th, 50th, or 60th birthday unforgettable with these creative celebration ideas tailored for adults.</p>
+                  <div class="post-meta">
+                    <span class="post-date">April 28, 2026</span>
+                    <span class="post-read">5 min read</span>
+                  </div>
+                  <a href="/blog/birthday/milestone-birthday-ideas/" class="btn-text">Read More &amp;rarr;</a>
+                </div>
+              </article>
+            </div>
+            <div class="pagination" data-reveal>
+              <a href="#" class="page-link active">1</a>
+              <a href="#" class="page-link">2</a>
+              <a href="#" class="page-link">3</a>
+              <a href="#" class="page-link next">Next &amp;rarr;</a>
+            </div>
+          </div>
+          <aside class="blog-sidebar" data-reveal>
+            <div class="sidebar-widget">
+              <h4>Popular Posts</h4>
+              <ul class="popular-posts">
+                <li><a href="/blog/wedding-tips/10-wedding-trends-2026/">10 Wedding Trends That Will Define 2026</a><span>8 min read</span></li>
+                <li><a href="/blog/wedding-tips/wedding-planning-checklist/">Complete Wedding Planning Checklist</a><span>12 min read</span></li>
+                <li><a href="/blog/birthday/kids-birthday-theme-ideas/">10 Creative Kids' Birthday Theme Ideas</a><span>5 min read</span></li>
+                <li><a href="/blog/decoration/floral-decor-trends-tamil-nadu/">Floral Decoration Trends in TN</a><span>6 min read</span></li>
+                <li><a href="/blog/budget/how-to-plan-wedding-on-budget/">Plan a Wedding on a Budget</a><span>7 min read</span></li>
+              </ul>
+            </div>
+            <div class="sidebar-widget">
+              <h4>Categories</h4>
+              <ul class="category-list">
+                <li><a href="#">Wedding Planning (12)</a></li>
+                <li><a href="#">Decoration Ideas (8)</a></li>
+                <li><a href="#">Birthday Inspiration (6)</a></li>
+                <li><a href="#">Corporate Events (4)</a></li>
+                <li><a href="#">Budget Tips (5)</a></li>
+                <li><a href="#">Trends (3)</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-widget sidebar-newsletter">
+              <h4>Stay Inspired</h4>
+              <p>Get the latest event planning tips delivered to your inbox.</p>
+              <form class="newsletter-form sidebar-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; Aether &amp;&amp; Aether.showToast('Subscribed!', 'success');">
+                <input type="email" placeholder="Your email" required aria-label="Email">
+                <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="cta-banner" aria-label="Call to action">
+      <div class="cta-banner-bg">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&amp;q=80&amp;auto=format,compress" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="container cta-banner-content">
+        <h2 data-reveal>Turn Inspiration Into Reality — Book a Consultation</h2>
+        <p data-reveal>Let's bring your event vision to life with our expert planning and execution.</p>
+        <div class="hero-actions" data-reveal>
+          <a href="/book-consultation/" class="btn btn-primary btn-lg">Book Free Consultation</a>
+          <a href="/get-quote/" class="btn btn-ghost-dark btn-lg">Get a Custom Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="newsletter-band">
+      <div class="container">
+        <h3>Join Our Celebration Circle</h3>
+        <p>Get event inspiration, tips, and exclusive offers delivered to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; Aether &amp;&amp; Aether.showToast('Subscribed! Welcome to the club.', 'success');">
+          <input type="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo" style="color:var(--neutral);">
+              <span class="logo-icon" style="background:var(--secondary);color:var(--primary);">AE</span>
+              <span class="logo-text" style="color:var(--neutral);">Aether Events</span>
+            </div>
+            <p>Premium event planning and management company in Tamil Nadu. We transform celebrations into timeless memories.</p>
+            <div class="footer-trust">
+              <span><strong>500+</strong> Events</span>
+              <span><strong>4.9?</strong> Rating</span>
+              <span><strong>15+</strong> Cities</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/wedding-planning/">Wedding Planning</a></li>
+              <li><a href="/services/birthday-parties/">Birthday Parties</a></li>
+              <li><a href="/services/corporate-events/">Corporate Events</a></li>
+              <li><a href="/services/venue-decoration/">Venue Decoration</a></li>
+              <li><a href="/services/photography-videography/">Photography</a></li>
+              <li><a href="/services/entertainment/">Entertainment</a></li>
+              <li><a href="/services/">View All &amp;rarr;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="/about/process/">Our Process</a></li>
+              <li><a href="/careers/">Careers</a></li>
+              <li><a href="/about/press/">Press &amp; Media</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/aetherevents" target="_blank" aria-label="Instagram">?</a>
+              <a href="https://www.facebook.com/aetherevents" target="_blank" aria-label="Facebook">f</a>
+              <a href="https://www.youtube.com/aetherevents" target="_blank" aria-label="YouTube">?</a>
+              <a href="https://www.linkedin.com/company/aetherevents" target="_blank" aria-label="LinkedIn">in</a>
+              <a href="https://www.pinterest.com/aetherevents" target="_blank" aria-label="Pinterest">P</a>
+              <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">??</a>
+            </div>
+            <p style="margin-top:var(--space-lg);font-size:0.813rem;">
+              <strong style="color:var(--neutral);">Phone:</strong> <a href="tel:+919876543210" style="color:rgba(255,253,248,0.7);">+91 98765 43210</a><br>
+              <strong style="color:var(--neutral);">Email:</strong> <a href="mailto:hello@aetherevents.com" style="color:rgba(255,253,248,0.7);">hello@aetherevents.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-areas">
+      <div class="container">
+        <p>Serving Across Tamil Nadu</p>
+        <div class="area-pills">
+          <a href="/venues/">Thanjavur</a>
+          <a href="/venues/">Trichy</a>
+          <a href="/venues/">Kumbakonam</a>
+          <a href="/venues/">Pattukkottai</a>
+          <a href="/venues/">Pudukottai</a>
+          <a href="/venues/">Chennai</a>
+          <a href="/venues/">Madurai</a>
+          <a href="/venues/">Coimbatore</a>
+          <a href="/venues/">Salem</a>
+          <a href="/venues/">Tamil Nadu</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-md);">
+        <span>© 2026 Aether Events. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+          <a href="/sitemap/">Sitemap</a>
+        </div>
+        <button class="back-to-top" aria-label="Back to top">?</button>
+      </div>
+    </div>
+  </footer>
+  <div class="fab-container">
+    <button class="fab fab-top" aria-label="Scroll to top">?</button>
+    <a href="tel:+919876543210" class="fab fab-phone" aria-label="Call us">??</a>
+    <a href="https://wa.me/919876543210" target="_blank" class="fab fab-whatsapp" aria-label="Chat on WhatsApp">??</a>
+  </div>
+  <div class="cookie-banner">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing, you agree to our use of cookies.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-primary btn-sm cookie-accept">Accept All</button>
+        <button class="btn btn-secondary btn-sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container"></div>
+  <div class="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" aria-label="Close">&amp;times;</button>
+    <button class="lightbox-prev" aria-label="Previous">‹</button>
+    <button class="lightbox-next" aria-label="Next">›</button>
+    <img src="" alt="Lightbox image">
+    <div class="lightbox-caption"></div>
+  </div>
+  <script src="/js/main.js"></script>
+</body>
+</html>
