@@ -1899,23 +1899,95 @@ header.scrolled {
     order: 2;
   }
 
-  /* --- III. Footer & Contact --- */
+  /* --- III. Footer & Contact (Compact Mobile) --- */
   footer {
-    padding: 20px 10px;
+    padding: 12px 10px;
     text-align: center;
+  }
+  .newsletter-band {
+    padding: 24px 0 16px;
+  }
+  .newsletter-band h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .newsletter-band p {
+    font-size: 0.688rem;
+    margin-bottom: 12px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    gap: 8px;
+    max-width: 100%;
+  }
+  .newsletter-form input {
+    height: 42px;
+    font-size: 0.75rem;
+  }
+  .newsletter-form button {
+    height: 42px;
+    padding: 0 18px;
+    font-size: 0.688rem;
   }
   .footer-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    padding: 20px 6px;
     text-align: center;
   }
   .footer-grid * {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  .footer-brand .logo {
+    margin-bottom: 6px;
+  }
+  .footer-brand p {
+    margin: 0 auto 10px;
+    max-width: 100%;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .footer-col h4 {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .footer-col a {
+    font-size: 11px;
+    padding: 2px 0;
+  }
+  .service-areas {
+    padding: 14px 0 10px;
+  }
+  .service-areas p {
+    font-size: 0.6rem;
+    margin-bottom: 4px;
+  }
+  .area-pills {
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .area-pills span {
+    padding: 3px 10px;
+    font-size: 0.6rem;
   }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    padding: 14px 0 6px;
+    gap: 8px;
+  }
+  .footer-bottom p {
+    font-size: 0.6rem;
+  }
+  .social-links {
+    justify-content: center;
+    gap: 8px;
+  }
+  .social-links a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.6rem;
   }
   .contact-grid {
     grid-template-columns: 1fr;
