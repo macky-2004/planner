@@ -448,10 +448,11 @@ main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
   background: var(--neutral);
 }
 #pricing .section-title {
-  color: var(--primary);
+  color: #FFFDF8;
 }
 #pricing .section-desc {
-  color: var(--muted);
+  color: #FFFFFF !important;
+  letter-spacing: 0.5px;
 }
 
 /* Stats Grid → Always Soft Ivory bg regardless of parent */
@@ -940,16 +941,21 @@ footer {
   padding: 40px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   text-align: center;
+  background: #0F172A;
 }
 .newsletter-band h3 {
   font-family: var(--font-heading);
   font-size: 1.125rem;
-  color: var(--neutral);
+  color: #FFFFFF;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
   margin-bottom: 4px;
 }
 .newsletter-band p {
-  color: rgba(255, 253, 248, 0.45);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
   margin-bottom: 18px;
 }
 .newsletter-form {
