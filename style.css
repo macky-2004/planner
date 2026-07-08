@@ -2308,3 +2308,30 @@ a[style*="background:rgba(212,175,55,0"][style*="color:var(--secondary)"] {
 .announcement-bar .gold {
   color: #FFFFFF !important;
 }
+
+/* ============================================
+   PRECISION FIX — Packages Text Color & Icon Sizing
+   ============================================ */
+
+/* --- 1. Packages section header/desc → Midnight Navy for readability --- */
+#pricing .section-eyebrow,
+#pricing .section-title,
+#pricing .section-desc,
+#pricing .pricing-card h4 {
+  color: #0F172A !important;
+}
+
+/* --- 2. Responsive package icon sizing --- */
+.package-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto 15px auto;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .package-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
