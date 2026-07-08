@@ -523,7 +523,7 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
 }
 .service-card .card-icon {
-  width: 52px; height: 52px; border-radius: 16px;
+  width: 60px; height: 60px; border-radius: 16px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(163, 163, 163, 0.15);
   display: flex; align-items: center; justify-content: center;
@@ -532,8 +532,17 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   color: var(--silver);
 }
 .service-card .card-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Footer SVG icons → 32px */
+.social-links a svg,
+.footer-col a svg,
+.footer-brand .logo svg,
+.footer-grid svg {
+  width: 32px !important;
+  height: 32px !important;
 }
 .service-card .card-title {
   font-family: var(--font-heading); font-size: 1.15rem;
@@ -1042,8 +1051,8 @@ footer {
   gap: 10px;
 }
 .social-links a {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1335,6 +1344,36 @@ body {
 .portfolio-overlay .card-title {
   font-size: 1rem;
   letter-spacing: 0.02em;
+}
+
+/* --- Stat Item Base --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+.stat-item {
+  text-align: center;
+  padding: 20px 12px;
+}
+.stat-number {
+  font-family: var(--font-accent);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--neutral);
+  line-height: 1;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 253, 248, 0.5);
 }
 
 /* --- Stat Item Luxury Refinement --- */
@@ -1919,8 +1958,8 @@ header.scrolled {
     gap: 10px;
   }
   .social-links a {
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     font-size: 0.65rem;
   }
   .contact-grid {
@@ -1930,9 +1969,7 @@ header.scrolled {
     padding: 24px 16px;
   }
   .contact-item-icon svg,
-  .card-icon svg,
   .usp-icon svg,
-  .social-links a svg,
   .back-to-top svg {
     width: 24px !important;
     height: 24px !important;
