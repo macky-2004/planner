@@ -334,11 +334,7 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
 /* ============================================
    SECTION HEADINGS
    ============================================ */
-.section { padding: var(--section-spacing) 0; background: #FFFDF8; }
-/* Subtle section alternation for visual rhythm */
-main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
-  background: #F8F9FA;
-}
+.section { padding: var(--section-spacing) 0; }
 .section-header { text-align: center; margin-bottom: 56px; }
 .section-eyebrow {
   font-family: var(--font-accent); font-size: 0.875rem;
@@ -363,6 +359,55 @@ main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
 .section-dark { background: var(--primary); }
 .section-dark .section-title { color: var(--neutral); }
 .section-dark .section-desc { color: rgba(255, 253, 248, 0.5); }
+
+/* Services & Pricing Sections → Light bg, glass cards with dark text */
+#services,
+.section:has(.services-grid) {
+  background: var(--neutral);
+}
+#services .section-title,
+#services .section-desc,
+.section:has(.services-grid) .section-title,
+.section:has(.services-grid) .section-desc {
+  color: var(--dark-text);
+}
+
+/* Pricing Section */
+#pricing {
+  background: var(--neutral);
+}
+#pricing .section-title {
+  color: var(--primary);
+}
+#pricing .section-desc {
+  color: var(--muted);
+}
+
+/* --- Targeted Text Contrast Fix --- */
+/* #about 'Where Vision Meets Perfection', #services 'What We Offer',
+   #portfolio 'Our Work', #pricing 'Packages', #faq 'Questions' */
+#about .section-title,
+#services .section-title,
+#services .section-desc,
+#services h2, #services h3, #services p,
+#portfolio .section-title,
+#portfolio .section-desc,
+#portfolio h2, #portfolio h3, #portfolio p,
+#pricing .section-title,
+#pricing .section-desc,
+#pricing h2, #pricing h3, #pricing p,
+#faq .section-title,
+#faq .section-desc,
+#faq h2, #faq h3, #faq h4, #faq p {
+  color: #0F172A;
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+/* Keep overlay text white on dark image gradients */
+#portfolio .portfolio-overlay .card-title,
+#portfolio .portfolio-overlay .card-desc {
+  color: #FFFFFF;
+  text-shadow: none;
+}
 
 /* ============================================
    PAGE HERO (inner pages)
@@ -475,52 +520,6 @@ main > section:nth-of-type(even):not(.section-dark):not([style*="background"]) {
   color: #FFFFFF !important;
   text-shadow: none;
   opacity: 1 !important;
-}
-
-/* --- 'Packages' — dark bg, white text --- */
-#pricing {
-  background: #0F172A;
-}
-#pricing h2,
-#pricing h3,
-#pricing h4,
-#pricing p {
-  color: #FFFFFF !important;
-  opacity: 1 !important;
-}
-#pricing .section-title {
-  color: #FFFFFF;
-}
-#pricing .section-desc {
-  color: #FFFFFF !important;
-  letter-spacing: 0.5px;
-}
-#pricing .pricing-card h4,
-#pricing .pricing-card p,
-#pricing .pricing-card .pricing-feature {
-  color: #FFFDF8 !important;
-}
-
-/* --- 'Questions?' — dark bg, white text --- */
-#faq h2,
-#faq h3,
-#faq h4,
-#faq p {
-  color: #FFFFFF !important;
-  opacity: 1 !important;
-}
-#faq .section-desc {
-  color: rgba(255,255,255,0.8) !important;
-}
-#faq .faq-question {
-  color: #FFFFFF;
-}
-#faq .faq-answer {
-  color: rgba(255,255,255,0.8);
-  opacity: 1;
-}
-#faq .faq-toggle {
-  color: #D4AF37;
 }
 
 /* Stats Grid → Always Soft Ivory bg regardless of parent */
@@ -1509,55 +1508,6 @@ body {
 /* --- Pricing Card Luxury Refinement --- */
 
 /* --- FAQ Luxury Refinement --- */
-#faq {
-  background: #0F172A !important;
-}
-#faq .section-eyebrow,
-#faq .section-title {
-  color: #FFFDF8 !important;
-}
-#faq .faq-question {
-  color: #FFFFFF;
-}
-#faq .faq-toggle {
-  color: #D4AF37;
-}
-.faq-item {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  transition: all 0.4s ease;
-}
-.faq-item:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.06);
-}
-.faq-item.open {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
-}
-.faq-question {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #FFFFFF;
-  padding: 20px 24px;
-  transition: color 0.3s ease;
-}
-.faq-question:hover {
-  color: #D4AF37;
-}
-.faq-toggle {
-  color: #D4AF37;
-}
-.faq-answer {
-  padding: 0 24px;
-  font-size: 0.85rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
-}
-.faq-item.open .faq-answer {
-  padding: 0 24px 20px;
-}
 
 /* --- CTA Banner Luxury Refinement --- */
 .cta-banner {
