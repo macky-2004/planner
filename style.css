@@ -1813,88 +1813,112 @@ header.scrolled {
   background-size: 200% auto;
 }
 
+/* Slide-down animation for mobile overlay */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
 /* ============================================
-   RESPONSIVE: max-width 768px (Mobile & Tablet)
+   RESPONSIVE: max-width 768px (Mobile)
    ============================================ */
 @media (max-width: 768px) {
-  /* --- Hamburger Menu --- */
+  /* --- I. Hamburger & Navigation --- */
   nav {
     display: none;
   }
   .mobile-toggle {
     display: flex;
   }
-  body.mobile-menu-open nav {
+  nav.active {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: var(--primary);
     z-index: 1000;
     justify-content: center;
     align-items: center;
     gap: 28px;
+    animation: slideDown 0.3s ease;
   }
-  body.mobile-menu-open nav a {
+  nav.active a {
     font-size: 1.05rem;
     color: var(--neutral);
   }
-  body.mobile-menu-open nav .cta-nav {
+  nav.active .cta-nav {
     margin-top: 8px;
   }
-  body.mobile-menu-open .mobile-toggle {
-    position: fixed;
-    top: 18px;
-    right: 24px;
-    z-index: 1001;
-  }
-  body.mobile-menu-open .mobile-toggle span {
+  .mobile-toggle.active span {
     background: var(--secondary);
   }
 
-  /* --- Card Optimization --- */
+  /* --- II. Layout Reset (Vertical Stacking) --- */
+  .portfolio-grid,
+  .services-grid,
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .portfolio-grid img,
+  .services-grid img,
+  .about-grid img,
+  .service-card img,
+  .portfolio-item img,
+  .pricing-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
   .service-card,
   .portfolio-item,
   .pricing-card {
     width: 100% !important;
     margin: 10px 0;
-    min-width: 0;
     padding: 24px 18px;
   }
+  .portfolio-item img,
+  .about-image-wrap {
+    order: 1;
+  }
+  .portfolio-item .portfolio-overlay,
+  .about-grid > div:last-child {
+    order: 2;
+  }
 
-  /* --- Compact Footer --- */
+  /* --- III. Footer & Contact --- */
   footer {
     height: auto;
+    padding: 20px;
+    text-align: center;
   }
   .footer-grid {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 32px 0;
-  }
-  .footer-col {
-    padding: 10px 0;
+    text-align: center;
   }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
   }
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  /* --- Contact --- */
   .contact-grid {
     grid-template-columns: 1fr;
   }
   .contact-item {
     padding: 24px 16px;
   }
+  .contact-item-icon svg,
+  .card-icon svg,
+  .usp-icon svg,
+  .social-links a svg,
+  .back-to-top svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
 
-  /* --- Hero --- */
+  /* --- Hero / Misc --- */
   .hero h1 {
     letter-spacing: -0.01em;
   }
