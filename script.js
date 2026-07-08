@@ -16,19 +16,19 @@
 
   /* ============ MOBILE NAV ============ */
   var toggle = document.querySelector('.mobile-toggle');
-  var nav = document.querySelector('nav');
+  var overlay = document.querySelector('.nav-overlay');
 
-  if (toggle && nav) {
+  if (toggle && overlay) {
     toggle.addEventListener('click', function () {
-      toggle.classList.toggle('open');
-      nav.classList.toggle('open');
-      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+      toggle.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
     });
 
-    nav.querySelectorAll('a').forEach(function (link) {
+    overlay.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        toggle.classList.remove('open');
-        nav.classList.remove('open');
+        toggle.classList.remove('active');
+        overlay.classList.remove('active');
         document.body.style.overflow = '';
       });
     });

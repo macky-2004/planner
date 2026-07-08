@@ -180,6 +180,10 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
 }
 .mobile-toggle span { width: 24px; height: 2px; background: var(--neutral); border-radius: 2px; transition: all var(--transition); }
 
+.nav-overlay {
+  display: none;
+}
+
 /* ============================================
    HERO
    ============================================ */
@@ -475,8 +479,8 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
    ============================================ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   position: relative;
 }
 .service-card {
@@ -680,8 +684,8 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
    ============================================ */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 .pricing-card {
   padding: 40px 28px;
@@ -1830,7 +1834,10 @@ header.scrolled {
   .mobile-toggle {
     display: flex;
   }
-  nav.active {
+  .nav-overlay {
+    display: none;
+  }
+  .nav-overlay.active {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -1842,11 +1849,11 @@ header.scrolled {
     gap: 28px;
     animation: slideDown 0.3s ease;
   }
-  nav.active a {
+  .nav-overlay.active a {
     font-size: 1.05rem;
     color: var(--neutral);
   }
-  nav.active .cta-nav {
+  .nav-overlay.active .cta-nav {
     margin-top: 8px;
   }
   .mobile-toggle.active span {
@@ -1890,14 +1897,17 @@ header.scrolled {
 
   /* --- III. Footer & Contact --- */
   footer {
-    height: auto;
-    padding: 20px;
+    padding: 20px 10px;
     text-align: center;
   }
   .footer-grid {
     display: flex;
     flex-direction: column;
+    gap: 15px;
     text-align: center;
+  }
+  .footer-grid * {
+    font-size: 13px;
   }
   .footer-bottom {
     flex-direction: column;
