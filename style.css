@@ -183,6 +183,9 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
 .nav-overlay {
   display: none;
 }
+@media (min-width: 769px) {
+  .nav-overlay { display: none !important; }
+}
 
 /* ============================================
    HERO
@@ -1834,27 +1837,45 @@ header.scrolled {
   .mobile-toggle {
     display: flex;
   }
-  .nav-overlay {
-    display: none;
-  }
   .nav-overlay.active {
     display: flex;
+  }
+  .nav-overlay.active ul {
+    display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--primary);
-    z-index: 1000;
-    justify-content: center;
     align-items: center;
-    gap: 28px;
-    animation: slideDown 0.3s ease;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
-  .nav-overlay.active a {
-    font-size: 1.05rem;
+  .nav-overlay.active ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .nav-overlay.active ul li a {
+    display: block;
+    font-size: 20px;
+    padding: 15px;
     color: var(--neutral);
+    transition: color var(--transition);
   }
-  .nav-overlay.active .cta-nav {
-    margin-top: 8px;
+  .nav-overlay.active ul li a:hover {
+    color: var(--secondary);
+  }
+  .nav-overlay.active ul li .cta-nav {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, var(--secondary), #C49A2E);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    font-size: 18px;
+  }
+  .nav-overlay.active ul li .cta-nav:hover {
+    transform: scale(1.05);
   }
   .mobile-toggle.active span {
     background: var(--secondary);
