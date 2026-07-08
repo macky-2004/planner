@@ -18,19 +18,30 @@
   var toggle = document.querySelector('.mobile-toggle');
   var overlay = document.querySelector('.nav-overlay');
 
+  function closeNav() {
+    toggle.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   if (toggle && overlay) {
     toggle.addEventListener('click', function () {
+      var isOpen = overlay.classList.contains('active');
       toggle.classList.toggle('active');
       overlay.classList.toggle('active');
-      document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+      document.body.style.overflow = isOpen ? '' : 'hidden';
     });
 
     overlay.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        toggle.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeNav);
+    });
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeNav();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeNav();
     });
   }
 

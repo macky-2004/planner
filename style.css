@@ -496,7 +496,7 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   opacity: 1 !important;
 }
 #services .section-eyebrow {
-  color: #FFFFFF !important;
+  color: #0F172A !important;
 }
 
 /* --- 'Portfolio' ('Our Work') — light bg, navy text --- */
@@ -509,7 +509,7 @@ nav .cta-nav:hover { background: #FFFFFF; color: #0F172A; transform: scale(1.04)
   opacity: 1 !important;
 }
 #portfolio .section-eyebrow {
-  color: #FFFFFF !important;
+  color: #0F172A !important;
 }
 #portfolio .section-desc {
   color: #0F172A !important;
@@ -2036,4 +2036,275 @@ header.scrolled {
     opacity: 1;
     padding: 20px 16px;
   }
+}
+
+/* ============================================
+   MOBILE NAV — Hamburger → X Animation
+   ============================================ */
+@media (max-width: 768px) {
+  .mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/* ============================================
+   CONTEXT-AWARE TEXT COLOR — 5 Named Sections
+   "Where Vision Meets Perfection"  (#about)
+   "What We Offer"                  (#services)
+   "Our Work"                       (#portfolio)
+   "Packages"                       (#pricing)
+   "Questions?"                     (#faq)
+   ============================================ */
+
+/* --- Light-bg sections → navy #0F172A for all text + icons --- */
+#about, #services, #portfolio, #faq,
+#about h1, #about h2, #about h3, #about h4, #about h5, #about h6,
+#about p, #about span, #about a, #about li, #about label, #about small,
+#about strong, #about em, #about blockquote, #about cite, #about div,
+#services h1, #services h2, #services h3, #services h4, #services h5, #services h6,
+#services p, #services span, #services a, #services li, #services label, #services small,
+#services strong, #services em, #services blockquote, #services cite, #services div,
+#portfolio h1, #portfolio h2, #portfolio h3, #portfolio h4, #portfolio h5, #portfolio h6,
+#portfolio p, #portfolio span, #portfolio a, #portfolio li, #portfolio label, #portfolio small,
+#portfolio strong, #portfolio em, #portfolio blockquote, #portfolio cite, #portfolio div,
+#faq h1, #faq h2, #faq h3, #faq h4, #faq h5, #faq h6,
+#faq p, #faq span, #faq a, #faq li, #faq label, #faq small,
+#faq strong, #faq em, #faq blockquote, #faq cite, #faq div {
+  color: #0F172A !important;
+}
+/* Revert SVGs inside these sections to inherit text color automatically */
+#about svg, #services svg, #portfolio svg, #faq svg {
+  stroke: currentColor !important;
+  fill: none !important;
+}
+/* Revert buttons — keep their styled appearance */
+#about .btn, #services .btn, #portfolio .btn, #faq .btn {
+  color: #FFFFFF !important;
+}
+/* Revert portfolio overlay text — stays white on dark gradient */
+#portfolio .portfolio-overlay .card-title,
+#portfolio .portfolio-overlay .card-desc {
+  color: #FFFFFF !important;
+}
+
+/* --- Dark-bg section (#pricing = section-dark) → white #FFFFFF for all text + icons --- */
+#pricing, #pricing h1, #pricing h2, #pricing h3, #pricing h4, #pricing h5, #pricing h6,
+#pricing p, #pricing span, #pricing a, #pricing li, #pricing label, #pricing small,
+#pricing strong, #pricing em, #pricing blockquote, #pricing cite, #pricing div {
+  color: #FFFFFF !important;
+}
+#pricing svg {
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+/* --- Pricing-specific overrides (downstream from the blanket white above) --- */
+/* Buttons revert to their own styled colors (not forced white) */
+#pricing .btn {
+  background: linear-gradient(90deg, #1E293B, #334155) !important;
+  color: #FFFFFF !important;
+  border: 1px solid #FFFFFF !important;
+}
+#pricing .btn-outline {
+  background: transparent !important;
+  color: #FFFFFF !important;
+}
+#pricing .pricing-card.featured .btn-primary {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: none !important;
+}
+/* Pricing badge */
+#pricing .pricing-badge {
+  background: rgba(255,255,255,0.15) !important;
+  color: #FFFFFF !important;
+}
+/* Disabled features — dimmed but still visible */
+#pricing .pricing-feature.disabled {
+  opacity: 0.55 !important;
+}
+
+/* ============================================
+   SVG ICON REFINEMENT — Auto-match text color
+   ============================================ */
+svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+/* ============================================
+   SUPPLEMENTARY VISIBILITY FIXES
+   Edge cases not covered by section rules above
+   ============================================ */
+
+/* --- Section eyebrow on light backgrounds → navy (was white/invisible) --- */
+.section:not(.section-dark) .section-eyebrow {
+  color: #0F172A !important;
+}
+
+/* --- Section description text on dark backgrounds → bump opacity --- */
+.section-dark .section-desc,
+.section-dark .section-desc[style*="color"] {
+  color: rgba(255, 253, 248, 0.85) !important;
+}
+
+/* --- Glass-card body text on dark backgrounds (USP, testimonial, stat) --- */
+.section-dark .glass-card p,
+.section-dark .usp-card p,
+.section-dark .testimonial-card p,
+.section-dark .stat-label {
+  color: rgba(255, 253, 248, 0.7) !important;
+  opacity: 1 !important;
+}
+
+/* --- USP card heading on dark background --- */
+.usp-card h4 {
+  color: #FFFDF8 !important;
+}
+
+/* --- Testimonial text on dark background --- */
+.testimonial-text {
+  color: rgba(255, 253, 248, 0.85) !important;
+}
+.testimonial-event {
+  color: rgba(255, 253, 248, 0.6) !important;
+}
+
+/* --- Pricing card disabled features (invisible low opacity on dark bg) --- */
+.pricing-card .pricing-feature[style*="color"] {
+  color: rgba(255, 253, 248, 0.5) !important;
+}
+.pricing-card .pricing-feature[style*="color"] span[style*="color"] {
+  color: rgba(255, 253, 248, 0.4) !important;
+}
+.pricing-card div[style*="color"][style*="0.3"] {
+  color: rgba(255, 253, 248, 0.6) !important;
+}
+
+/* --- Pricing rupee symbol on dark cards (was dark navy at 40% → invisible) --- */
+.pricing-price .currency-sign {
+  opacity: 0.7 !important;
+}
+.pricing-price small {
+  opacity: 0.7 !important;
+}
+
+/* --- About page quote block (white text on near-white bg) --- */
+.about-grid div[style*="color:var(--secondary)"][style*="italic"] {
+  color: #0F172A !important;
+}
+
+/* --- Blog card category labels & links (white text on light cards) --- */
+.section:not(.section-dark) .glass-card [style*="color:var(--secondary)"] {
+  color: #0F172A !important;
+}
+
+/* --- Contact page city pills (white text on faint gold bg) --- */
+div[style*="margin-top"][style*="20px"] span[style*="color:var(--secondary)"] {
+  color: #0F172A !important;
+}
+
+/* --- Gallery + FAQ filter pills (white text on faint gold bg) --- */
+a[style*="background:rgba(212,175,55,0"][style*="color:var(--secondary)"] {
+  color: #0F172A !important;
+}
+
+/* --- Content page email links (white text on light bg → invisible) --- */
+.content-page a[href*="mailto:"][style*="color:var(--secondary)"] {
+  color: #0F172A !important;
+}
+
+/* --- Testimonials rating section low opacity text on dark bg --- */
+.section-dark [style*="rgba(255,253,248,0.45)"] {
+  color: rgba(255, 253, 248, 0.65) !important;
+}
+.hero p {
+  color: rgba(255, 253, 248, 0.8) !important;
+}
+
+/* --- Breadcrumb text on dark bg → improve readability --- */
+.breadcrumb {
+  color: rgba(255, 253, 248, 0.7) !important;
+}
+.breadcrumb a {
+  color: rgba(255, 253, 248, 0.8) !important;
+}
+.breadcrumb .sep {
+  color: rgba(255, 253, 248, 0.4) !important;
+}
+.breadcrumb .current {
+  color: rgba(255, 253, 248, 0.9) !important;
+}
+
+/* --- Page hero description on dark bg --- */
+.page-hero p {
+  color: rgba(255, 253, 248, 0.8) !important;
+}
+
+/* --- Footer text on dark bg → improve readability --- */
+.footer-brand p,
+.footer-col a,
+.service-areas p,
+.area-pills span,
+.footer-bottom p,
+.footer-bottom a,
+.social-links a,
+.newsletter-band p {
+  opacity: 1 !important;
+}
+.footer-brand p {
+  color: rgba(255, 253, 248, 0.65) !important;
+}
+.footer-col a {
+  color: rgba(255, 253, 248, 0.6) !important;
+}
+.service-areas p {
+  color: rgba(255, 253, 248, 0.5) !important;
+}
+.area-pills span {
+  color: rgba(255, 253, 248, 0.6) !important;
+}
+.footer-bottom p,
+.footer-bottom a {
+  color: rgba(255, 253, 248, 0.55) !important;
+}
+.social-links a {
+  color: rgba(255, 253, 248, 0.6) !important;
+}
+
+/* --- CTA banner description on dark bg --- */
+.cta-banner p {
+  color: rgba(255, 253, 248, 0.75) !important;
+}
+
+/* --- Filter pills (inactive) on light bg --- */
+.filter-pill {
+  color: #475569 !important;
+}
+
+/* --- Service card link arrow on dark bg card with light text --- */
+.service-card .card-link::after {
+  background: currentColor !important;
+}
+
+/* --- Stat section (light bg variant) text --- */
+.section-dark:has(.stats-grid) .stat-label {
+  color: #64748B !important;
+}
+.section-dark:has(.stats-grid) .stat-number {
+  color: #0F172A !important;
+}
+
+/* --- Announcement bar text --- */
+.announcement-bar {
+  color: rgba(255, 253, 248, 0.8) !important;
+}
+.announcement-bar .gold {
+  color: #FFFFFF !important;
 }
