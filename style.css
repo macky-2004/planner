@@ -476,7 +476,7 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius);
+  border-radius: 20px;
   padding: 36px 28px;
   box-shadow: var(--shadow);
   transition: all var(--transition);
@@ -504,19 +504,19 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
    ============================================ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
   position: relative;
 }
 .service-card {
-  padding: 36px 30px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: var(--radius);
+  border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
@@ -624,14 +624,14 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
 /* ============================================
    USP / VALUES GRID
    ============================================ */
-.usp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+.usp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 .usp-card {
-  text-align: center; padding: 32px 20px;
+  text-align: center; padding: 24px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
+  border-radius: 20px;
   transition: all var(--transition);
 }
 .usp-card:hover { transform: translateY(-4px); border-color: rgba(212, 175, 55, 0.2); background: rgba(255, 255, 255, 0.08); }
@@ -656,10 +656,10 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
    ============================================ */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
-.portfolio-item { position: relative; border-radius: var(--radius-sm); overflow: hidden; cursor: pointer; aspect-ratio: 4/3; }
+.portfolio-item { position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; }
 .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .portfolio-item:hover img { transform: scale(1.06); }
 .portfolio-overlay {
@@ -675,14 +675,14 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
 /* ============================================
    TESTIMONIAL CARD
    ============================================ */
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 .testimonial-card {
-  padding: 30px 26px;
+  padding: 24px;
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
+  border-radius: 20px;
   display: flex; flex-direction: column;
 }
 .testimonial-stars {
@@ -709,12 +709,12 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
    ============================================ */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 .pricing-card {
-  padding: 40px 28px;
-  border-radius: var(--radius);
+  padding: 24px;
+  border-radius: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -732,10 +732,10 @@ nav .cta-nav:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(212, 17
 }
 .pricing-card.featured {
   border: 2px solid var(--secondary);
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 .pricing-card.featured:hover {
-  transform: scale(1.03) translateY(-4px);
+  transform: scale(1.05) translateY(-4px);
 }
 .pricing-badge {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
@@ -1364,7 +1364,7 @@ body {
   box-shadow: 0 24px 80px rgba(15, 23, 42, 0.15);
 }
 .pricing-card.featured:hover {
-  transform: scale(1.03) translateY(-10px);
+  transform: scale(1.05) translateY(-10px);
 }
 
 /* --- USP Card Luxury Refinement --- */
@@ -1376,11 +1376,8 @@ body {
 }
 
 /* --- Portfolio Luxury Refinement --- */
-.portfolio-grid {
-  gap: 1.5rem;
-}
 .portfolio-item {
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -1822,12 +1819,10 @@ header.scrolled {
    RESPONSIVE LUXURY REFINEMENT
    ============================================ */
 @media (max-width: 1024px) {
-  .portfolio-grid { gap: 1.25rem; }
   .stats-grid { gap: 16px; }
 }
 
 @media (max-width: 640px) {
-  .portfolio-grid { gap: 1rem; }
   .stats-grid { gap: 12px; }
   .faq-question { padding: 16px 18px; font-size: 0.85rem; }
   .faq-answer { padding: 0 18px; font-size: 0.8rem; }
@@ -1861,68 +1856,6 @@ header.scrolled {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================
-   DESKTOP LAYOUT RHYTHM (769px+)
-   Bento → Services | Zig-Zag → Portfolio | Row → Pricing
-   ============================================ */
-@media (min-width: 769px) {
-
-  /* --- Services: Bento Grid --- */
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  .service-card:nth-child(3n+1) {
-    grid-column: 1 / -1;
-  }
-
-  /* --- Portfolio: Zig-Zag Layout --- */
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .portfolio-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    aspect-ratio: auto;
-    border-radius: 20px;
-  }
-  .portfolio-item img {
-    width: 55%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-  .portfolio-overlay {
-    position: relative;
-    inset: auto;
-    background: none;
-    opacity: 1;
-    width: 45%;
-    padding: 40px 36px;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    pointer-events: auto;
-  }
-  .portfolio-item:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-
-  /* --- Pricing: Side-by-Side Row --- */
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-  .pricing-card.featured {
-    transform: scale(1.05);
-  }
-  .pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
-  }
-}
-
 @media (max-width: 768px) {
   /* --- I. Hamburger & Navigation --- */
   nav {
@@ -1935,14 +1868,14 @@ header.scrolled {
     background: var(--secondary);
   }
 
-  /* --- II. Layout Reset (Vertical Stacking) --- */
+  /* --- II. Layout Reset (Single Column Stack) --- */
   .portfolio-grid,
   .services-grid,
   .pricing-grid,
-  .about-grid {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  .about-grid,
+  .usp-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
   }
   .portfolio-grid img,
   .services-grid img,
